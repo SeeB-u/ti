@@ -1,4 +1,7 @@
-#Notatki do Technologii Internetowych
+# Notatki do Technologii Internetowych
+
+> Dzień bez kodowania jest dniem straconym.
+
 
 Znaczniki:
 

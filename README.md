@@ -24,3 +24,14 @@ Szablon pliku HTML5:
 </body>
 </html>
 ```
+
+_ola_ 1 _ <br>
+__ola__ 2 _ <br>
+___ola___ 3 _ <br>
+*ola* 1* <br>
+**ola** 2* <br>
+***ola*** 3* <br>
+
+[wp] (http://www.wp.pl)
+
+![Logo wp] (http://x.wpimg.pl/i/ivar/layout/201201/wp.png)

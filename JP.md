@@ -284,3 +284,27 @@ getchar();
 return 0;
 }
 ```
+
+---
+
+Program wypisujący liczby od -3.5 do 7.5 z krokiem co 0.5 za pomocą 2 różnych pętli:
+
+```c
+#include <stdio.h>
+int main() {
+double i;
+for (i=-3.5; i<=7.5; i=i+0.5) {
+    printf("%.1lf,", i);
+}
+
+printf("\n\n\n");
+
+i=-3.5;
+while (i<=7.5) {
+      printf("%4.1lf,\n", i);
+      i=i+0.5;
+}
+getchar();
+return 0;
+}
+```

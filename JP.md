@@ -8,7 +8,7 @@ int main() {
 
 ---
 
-Program na użycie liczb double (zmiennych przecinkowych)
+Kod programu na użycie liczb double (zmiennych przecinkowych - podwójnej precyzji):
 
 ```c
 # include <stdio.h>
@@ -25,11 +25,11 @@ int main () {
 }
 ```
 
-żeby wyświetlić odpowiednią ilość miejsc po przecinku wpisujemy w następujący sposób: %. **ilość** lf
+Aby wyświetlić odpowiednią ilość miejsc po przecinku wpisujemy w następujący sposób: %. **ilość** lf
 
 ---
 
-Program do liczenia długości okręgu i pola koła
+Kod programu do liczenia długości okręgu i pola koła:
 
 
 ```c
@@ -46,14 +46,14 @@ int main () {
     return 0;
 }
 ```
-Trzeba użyć 2 razy 
+Trzeba użyć 2 razy:
 
 ```c
 getchar(); 
 getchar();
 ```
 
-ponieważ pierwszy znak jest pobierany jako enter po wpisaniu promienia.
+ponieważ pierwszy znak jest pobierany jako enter przechowywany w buforze po wpisaniu promienia.
 
 ```c
 #include <math.h> 
@@ -67,7 +67,7 @@ puts("Podaj dlugosc promienia:")
 -działa tylko do napisów.
 
 ---
-Program przeliczający temperatury (skal Celsjusza i Fahrenheita) -działający w pętli while
+Kod programu przeliczającego temperatury (skal Celsjusza i Fahrenheita) -działający w pętli while:
 
 ```c
 #include <stdio.h>
@@ -111,11 +111,11 @@ int main () {
 ```
 
 czasami trzeba pamiętać, aby liczby wpisywać w następujący sposób 9.0, a nie 9 itd.<br>
--wynik działania jest typu takiego, jakiego była najbardziej zprecyzowana liczba.<br>
+Wynik działania jest typu takiego, jakiego była najbardziej zprecyzowana liczba w działaniu.<br>
 Sposób wyświetlania %5.1lf oznacza, że liczba będzie wyświetlona na 5 polach z dokładnością do 1 miejsca po przecinku<br>
 <br><br><br>
 
-Przerobienie programu na pętlę for
+Przerobienie kodu programu na pętlę for:
 
 ```c
 #include <stdio.h>
@@ -138,7 +138,7 @@ stałe preprocesora -pamiętać, aby nie używać średnika!
 
 ---
 
-Program obliczający ciąg Fibonacciego (pętla do-while):
+Kod programu obliczający ciąg Fibonacciego (pętla do-while):
 
 ```c
 #include <stdio.h>
@@ -171,7 +171,7 @@ return 0;
 ```
 
 ---
-Program służący do rysowania choinki (użycie pętli for).
+Kod programu służącego do rysowania choinki (użycie pętli for):
 
 ```c
 #include <stdio.h>
@@ -203,10 +203,10 @@ putchar(' ');
 ```
 wyświetla pojedynczy znak.
 <br>
-W apostrofach umieszczamy pojedynczy znak.
+*W apostrofach umieszczamy pojedynczy znak.
 
 ***
-Program służący do wypisywania liczb całkowitych od 0 do 23
+Kod programu służącego do wypisywania liczb całkowitych od 0 do 23
 
 *pętla for:
 
@@ -287,7 +287,7 @@ return 0;
 
 ---
 
-Program wypisujący liczby od -3.5 do 7.5 z krokiem co 0.5 za pomocą 2 różnych pętli:
+Kod programu wypisującego liczby od -3.5 do 7.5 z krokiem co 0.5 za pomocą 2 różnych pętli:
 
 ```c
 #include <stdio.h>
@@ -311,7 +311,7 @@ return 0;
 
 ---
 
-Program służący do liczenia średniej z podanych liczb (użytkownik sam wybiera ilość liczb):
+Kod programu służącego do liczenia średniej z podanych liczb (użytkownik sam wybiera ilość liczb):
 
 ```c
 # include <stdio.h>
@@ -332,6 +332,42 @@ int main () {
     srednia=suma/n;
     printf("Suma podanych %d liczb wynosi: %lf \n", n, suma);
     printf("Srednia z podanych %d liczb wynosi: %lf", n,srednia);
+    getchar();
+    getchar();
+    return 0;
+}
+```
+
+---
+
+Kod programu wyświetlającego kwadraty i sześciany liczb od 1 do podanej liczby przez użytkownika:
+
+```c
+#include <stdio.h>
+int main() {
+int i, n;
+    printf("Podaj liczbe:");
+    scanf("%d", &n);
+    for(i=1;i<=n;i++) {  						/*Pętla for*/
+	printf("%d %d %d \n", i, i*i, i*i*i);
+    }
+    
+    printf("\n");								/*oddzielenie wyników*/
+    
+    i=1;										/*Pętla while*/
+    while(i<=n)	{
+	printf("%d %d %d \n", i, i*i, i*i*i);
+	i++;
+    }
+    
+    printf("\n");								/*oddzielenie wyników*/
+    
+    i=1;										/*Pętla do-while*/
+    do	{
+	printf("%d %d %d \n", i, i*i, i*i*i);
+	i++;
+		}
+    while(i<=n);
     getchar();
     getchar();
     return 0;

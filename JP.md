@@ -39,8 +39,8 @@ int main () {
     double r;
     printf("Podaj dlugosc promienia:\n");
     scanf("%lf", &r);
-    printf("Dlugosc okregu o promieniu %lf wynosi: %.lf \n" ,r,2*M_PI*r);
-    printf("Pole kola o promieniu %lf wynosi: %.lf \n" ,r,M_PI*r*r);
+    printf("Dlugosc okregu o promieniu %lf wynosi: %lf \n" ,r,2*M_PI*r);
+    printf("Pole kola o promieniu %lf wynosi: %lf \n" ,r,M_PI*r*r);
     getchar();
     getchar();
     return 0;
@@ -64,4 +64,4 @@ Także można użyć:
 ```c
 puts("Podaj dlugosc promienia:")
 ```
-- działa tylko do napisów.
+-działa tylko do napisów.

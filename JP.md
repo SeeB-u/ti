@@ -418,4 +418,22 @@ double i;
     return 0;
 }
 ```
+---
+Kod programu, który wyświetla tabliczkę mnożenia do 13:
+
+```c
+#include <stdio.h> 
+int main() 
+{ 
+int i,j; 
+for(i=1;i<=13;i++) 	{ 
+	for(j=1;j<=13;j++)	{
+		printf("%4d ",j*i); 
+						}
+	putchar('\n'); 
+					} 
+getchar();
+return 0;
+}
+```
 

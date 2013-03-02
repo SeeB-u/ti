@@ -142,7 +142,7 @@ Program obliczający ciąg Fibonacciego (pętla do-while):
 
 ```c
 #include <stdio.h>
-main()
+int main()
 {
       int u1, u2, u3; /*na kolejne wyrazy ciągu*/
       int n;          /*numer wyrazu*/
@@ -166,6 +166,34 @@ main()
       printf("Wyraz o numerze %d ma wartosc %d", n, u3);
 getchar();
 getchar();
+return 0;
+}
+```
+
+---
+Program służący do rysowania choinki (użycie pętli for).
+
+```c
+#include <stdio.h>
+#define znak '*' /*znak wypełnienia*/
+int main() {
+    int lbwier; /*całkowita liczba wierszy*/
+    int lw;     /*licznik wierszy*/
+    int lodst;  /*liczba odstępów poprzedzających gwiazdkę*/
+    int j;
+    printf("ile wierszy?");
+    scanf("%d",&lbwier);
+    for(lw=0; lw<lbwier; lw++)
+    {
+              lodst=lbwier-lw-1;
+              for(j=0; j<lodst; j++)
+              putchar(' ');
+              for(j=0; j<2*lw+1; j++)
+              putchar(znak);
+              putchar('\n');
+    }
+    getchar();
+    getchar();
 return 0;
 }
 ```

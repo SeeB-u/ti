@@ -252,3 +252,35 @@ getchar();
 return 0;
 }
 ```
+
+Połączenie wszystkich 3 pętli w jednym programie -potrójnie wyświetla listę:
+
+```c
+#include <stdio.h>
+int main() {
+int i;
+for (i=0; i<=23; i++) {
+printf("%d,", i);
+}
+putchar('\n');
+
+
+i=0;
+while (i<=23) {
+printf("%d,", i);
+i++;
+}
+putchar('\n');
+
+
+i=0;
+do {
+printf("%d,", i);
+i++;
+}
+while(i<=23);
+
+getchar();
+return 0;
+}
+```

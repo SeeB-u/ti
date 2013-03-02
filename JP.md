@@ -401,4 +401,21 @@ int i, suma=0;
     return 0;
 }
 ```
+---
+
+Kod programu wypisującego wartości funkcji sin i cos dla kątów od 0 do 180 stopni ze skokiem 30 stopni:
+
+```c
+#include <stdio.h>
+#include <math.h>
+int main() {
+double i;
+    for(i=0;i<=180;i=i+30) {
+       printf("sin(%.0lf)= %lf \n",i,sin(i*M_PI/180));
+       printf("cos(%.0lf)= %lf \n\n",i ,cos(i*M_PI/180));
+}
+    getchar();
+    return 0;
+}
+```
 

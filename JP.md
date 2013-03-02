@@ -110,5 +110,28 @@ int main () {
 }
 ```
 
-czasami trzeba pamiętać, aby liczby wpisywać w następujący sposób 9.0, a nie 9 itd.
--wynik działania jest typu takiego, jakiego była najbardziej zprecyzowana liczba.
+czasami trzeba pamiętać, aby liczby wpisywać w następujący sposób 9.0, a nie 9 itd.<br>
+-wynik działania jest typu takiego, jakiego była najbardziej zprecyzowana liczba.<br>
+Sposób wyświetlania %5.1lf oznacza, że liczba będzie wyświetlona na 5 polach z dokładnością do 1 miejsca po przecinku<br>
+<br><br><br>
+
+Przerobienie programu na pętlę for
+
+```c
+#include <stdio.h>
+#define LOWER 0
+#define UPPER 300
+#define STEP 20
+int main() {
+    int fahr;
+    for(fahr=LOWER;fahr<=UPPER;fahr=fahr+STEP)
+    printf("%3d %6.1lf \n", fahr, (5.0/9.0)*(fahr-32));
+    getchar();
+    return 0;
+}
+```
+Przy czym:
+```c
+#define LOWER 0
+```
+stałe preprocesora -pamiętać, aby nie używać średnika!

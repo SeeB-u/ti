@@ -135,3 +135,38 @@ Przy czym:
 #define LOWER 0
 ```
 stałe preprocesora -pamiętać, aby nie używać średnika!
+
+---
+
+Program obliczający ciąg Fibonacciego (pętla do-while):
+
+```c
+#include <stdio.h>
+main()
+{
+      int u1, u2, u3; /*na kolejne wyrazy ciągu*/
+      int n;          /*numer wyrazu*/
+      int i;          /*licznik*/
+      
+      do {
+          printf("Podaj numer wyrazu (co najmniej 3):");
+          scanf("%d", &n);
+          }
+      while(n<3);
+      u2=u1=1;        /*dwa pierwsze wyrazy*/
+      i=2;
+      while(i++<n)    /*uwaga, działa tylko dla n>2*/
+                  {
+                      u3=u1+u2;
+                      u1=u2;
+                      u2=u3;
+                  }
+                  /*inna możliwość*/
+                  /*for(i=3; i<=n; i++, u1=u2, u2=u3) u3=u1+u2;*/
+      printf("Wyraz o numerze %d ma wartosc %d", n, u3);
+getchar();
+getchar();
+return 0;
+}
+```
+

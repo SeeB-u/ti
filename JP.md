@@ -94,16 +94,15 @@ Zmienienie programu w taki sposób, aby temperatura w Celsjuszach była przelicz
 ```c
 #include <stdio.h>
 int main () {
-    double celsius;
-    int fahr;
+    double celsius, fahr;
     int lower, upper, step;
     lower=0;
     upper=300;
     step=20;
     fahr=lower;
     while(fahr<=upper) {
-                       celsius=5.0*(fahr-32.0)/9.0;
-                       printf("%d \t %.2lf \n", fahr, celsius);
+                       celsius=5*(fahr-32)/9;
+                       printf("%.0lf \t %.2lf \n", fahr, celsius);
                        fahr=fahr+step;
                        }
     getchar();
@@ -111,4 +110,5 @@ int main () {
 }
 ```
 
-trzeba pamiętać, aby liczby wpisywać w następujący sposób 9.0, a nie 9 itd.
+czasami trzeba pamiętać, aby liczby wpisywać w następujący sposób 9.0, a nie 9 itd.
+-wynik działania jest typu takiego, jakiego była najbardziej zprecyzowana liczba.

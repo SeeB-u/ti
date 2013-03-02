@@ -197,4 +197,10 @@ int main() {
 return 0;
 }
 ```
-
+Funkcja: 
+```c
+putchar(' ');
+```
+wyświetla pojedynczy znak.
+<br>
+W apostrofach umieszczamy pojedynczy znak.

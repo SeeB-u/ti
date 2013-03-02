@@ -373,3 +373,32 @@ int i, n;
     return 0;
 }
 ```
+
+---
+
+Kod programu liczącego sumę kwadratów liczb naturalnych od 3 do 15:
+
+```c
+#include <stdio.h>
+int main() {
+int i, suma=0;
+    for(i=3;i<=15;i++) {	/*Pętla for*/
+		suma=suma+(i*i);
+	}
+	printf("%d \n",suma);
+	
+	printf("\n");		/*Rozdzielenie wyników */
+	
+	
+	i=3;			/*Pętla while; w tym miejscu ustawiamy i */
+	suma=0;			/*wyzerowanie sumy, ponieważ nie jest już =0*/
+	while(i<=15)	{
+	suma=suma+(i*i);
+	i++;
+	}
+	printf("%d \n",suma);
+    getchar();
+    return 0;
+}
+```
+

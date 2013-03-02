@@ -309,6 +309,7 @@ return 0;
 }
 ```
 
+---
 
 Program służący do liczenia średniej z podanych liczb (użytkownik sam wybiera ilość liczb):
 

@@ -204,3 +204,51 @@ putchar(' ');
 wyświetla pojedynczy znak.
 <br>
 W apostrofach umieszczamy pojedynczy znak.
+
+***
+Program służący do wypisywania liczb całkowitych od 0 do 23
+
+*pętla for:
+
+```c
+#include <stdio.h>
+int main() {
+int i;
+for (i=0; i<=23; i++) {
+printf("%d,", i);
+}
+getchar();
+return 0;
+}
+```
+
+*pętla while:
+
+```c
+#include <stdio.h>
+int main() {
+int i=0;
+while (i<=23) {
+printf("%d,", i);
+i++;
+}
+getchar();
+return 0;
+}
+```
+
+*pętla do-while:
+
+```c
+#include <stdio.h>
+int main() {
+int i=0;
+do {
+printf("%d,", i);
+i++;
+}
+while(i<=23);
+getchar();
+return 0;
+}
+```

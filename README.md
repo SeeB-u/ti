@@ -50,7 +50,8 @@ Linki oraz zdjęcia:
 ---
 
 Podstawowe komendy:<br>
-* ls _wyświetla pliki w katalogu_ <br>
+* ls _wyświetla zawartość katalogu_ <br>
+* ls -l _wyświetla szczegółowo zawartość kataslogu_<br>
 * cd _przemieszczanie się w strukturze katalogów_ <br>
 * nano _edytor tekstowy_ <br>
 * rm _kasowanie pliku_ <br>
@@ -65,3 +66,12 @@ Podstawowe komendy:<br>
 * git pull _ściąga nowe rzyczy z github_
 
 ---
+Edytor tekstu:
+Sublime Text 2
+Instalacja i uruchomianie:
+
+* ściągnąć i rozpakować plik przy pomocy polecenia:
+**tar jxvf nazwa pliku** jeżeli chemy to można wpisać początek nazwy i wcisnąć "TAB",
+* przejść do katalogu rozpakowanego (za pomocą komendy **cd**),
+* zmienić atrybuty przy pomocy **chmod 755 sublime_text**,
+* uruchomić program za pomocą polecenia **./sublime_text**.

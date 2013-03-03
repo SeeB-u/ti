@@ -35,3 +35,13 @@ ___ola___ 3 _ <br>
 [wp] (http://www.wp.pl)
 
 ![Logo wp] (http://x.wpimg.pl/i/ivar/layout/201201/wp.png)
+
+
+---
+
+* Dodawanie klucza: ustawienia > ssh key > add ssh key > nazwa + klucz;
+* Generowanie kluczy w linuxie: ssh-keygen > odczytywanie cat ~/.ssh/id_rsa.pub (sprawdzenie nazw plików: ls ~/.ssh/).
+* Kontynuacja dodawania klucza > skopiować klucz od ssh-rsa > paste na strone i potwierdzić hasłem.
+* Klonowanie: git clone **adres z ssh** lub git clone i adres kogoś.
+* Dociąganie danych: git pull.
+

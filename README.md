@@ -24,18 +24,21 @@ Szablon pliku HTML5:
 </body>
 </html>
 ```
+Pogrubienia oraz kursywa:
+* _ola_ 1 _ <br>
+* __ola__ 2 _ <br>
+* ___ola___ 3 _ <br>
+* *ola* 1* <br>
+* **ola** 2* <br>
+* ***ola*** 3* <br>
 
-_ola_ 1 _ <br>
-__ola__ 2 _ <br>
-___ola___ 3 _ <br>
-*ola* 1* <br>
-**ola** 2* <br>
-***ola*** 3* <br>
+---
 
-[wp] (http://www.wp.pl)
+Linki oraz zdjęcia:
 
-![Logo wp] (http://x.wpimg.pl/i/ivar/layout/201201/wp.png)
+* [wp] (http://www.wp.pl)
 
+* ![Logo wp] (http://x.wpimg.pl/i/ivar/layout/201201/wp.png)
 
 ---
 
@@ -47,17 +50,18 @@ ___ola___ 3 _ <br>
 ---
 
 Podstawowe komendy:<br>
-*ls _wyświetla pliki w katalogu_ <br>
-*cd _przemieszczanie się w strukturze katalogów_ <br>
-*nano _edytor tekstowy_ <br>
-*rm _kasowanie pliku_ <br>
-*git rm _kasowanie pliku w repozytorium_ <br>
-*mv _zmiana nazwy pliku_ <br>
-*git mv _zmiana nazwy pliku w repozytorium_ <br>
-*git status _podpowiada co się stało_ <br>
-*git checkout -- plik _przywraca plik_ <br>
-*git reset HEAD plik _przywraca plik_ <br>
-*git commit -m "..." _opisuje zdarzenie, później można zachować zmiany na github_ <br>
-*git push  _przerzuca repozytorium na githuba_ <br>
-*git pull _ściąga nowe rzyczy z github_
+* ls _wyświetla pliki w katalogu_ <br>
+* cd _przemieszczanie się w strukturze katalogów_ <br>
+* nano _edytor tekstowy_ <br>
+* rm _kasowanie pliku_ <br>
+* git rm _kasowanie pliku w repozytorium_ <br>
+* mv _zmiana nazwy pliku_ <br>
+* git mv _zmiana nazwy pliku w repozytorium_ <br>
+* git status _podpowiada co się stało_ <br>
+* git checkout -- plik _przywraca plik_ <br>
+* git reset HEAD plik _przywraca plik_ <br>
+* git commit -m "..." _opisuje zdarzenie, później można zachować zmiany na github_ <br>
+* git push  _przerzuca repozytorium na githuba_ <br>
+* git pull _ściąga nowe rzyczy z github_
 
+---

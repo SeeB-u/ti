@@ -437,3 +437,21 @@ return 0;
 }
 ```
 
+---
+
+Nieudana próba napisania kodu programu, który działa w pętli, aż użytkownik nie wciśnie "x"
+
+```c
+#include <stdio.h>
+#define znak 'x'
+int main() {
+char i='a';
+    while(i!=znak)    {
+           puts("Podaj litere:");
+           scanf("%c", &i);
+           printf("Podales litere:%c \n",i);
+        	}
+           getchar();
+           return 0;
+}
+```        

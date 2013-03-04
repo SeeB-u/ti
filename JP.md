@@ -454,4 +454,6 @@ char i='a';
            getchar();
            return 0;
 }
-```        
+```       
+
+Jakiś pomysł jak go poprawić?

@@ -447,13 +447,23 @@ Nieudana próba napisania kodu programu, który działa w pętli, aż użytkowni
 int main() {
 char i='a';
     while(i!=znak)    {
-           puts("Podaj litere:");
-           scanf("%c", &i);
-           printf("Podales litere:%c \n",i);
-        	}
-           getchar();
-           return 0;
+       printf("Podaj litere:");
+       scanf("%c", &i);
+       printf("Podales litere:%c \n\n",i);
+       getchar();
+	}
+    getchar();
+    return 0;
 }
 ```       
 
-Jakiś pomysł jak go poprawić?
+Już działa program, potrzebna była jeszcze linijka z:
+
+```c
+getchar();
+```
+, ponieważ w buforze był "enter" co psuło program.
+
+---
+
+Zostało jeszcze jedno zadanko, ale tego już nie umiem ;/.

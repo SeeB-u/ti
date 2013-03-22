@@ -466,4 +466,16 @@ getchar();
 
 ---
 
-Zostało jeszcze jedno zadanko, ale tego już nie umiem ;/.
+Kod programu, który wywietla litery od a do k oraz wywietla ich kod ADCII w systemie dziesitnym oraz szesnastkowym:
+
+```c
+#include <stdio.h>
+int main() {
+char i='a';
+    for(i='a';i<='k';i++) {
+    printf("Litera: %c znak ASCII: %3d szesnastkowo: %2x \n",i,i,i);
+    }
+    getchar();
+    return 0;
+}
+```

@@ -492,21 +492,22 @@ char i;
 }
 ```
 
+Ulepszono program - tabliczka mnożenia:
 
+```c
 #include <stdio.h> 
 int main() 
 { 
 int i,j;
-printf("     ");
+printf("    |");
 for(i=1;i<=13;i++)  {
                     printf("%4d ",i);
                     }
-                    printf("\n----|----------------------------------------------------------------\n"); 
-                    
+printf("\n----|----------------------------------------------------------------\n");                 
 for(i=1;i<=13;i++)  { 
     for(j=1;j<=13;j++)  {
                                                 if(j==1){
-                                 printf("%3d |",j);
+                                 printf("%3d |",j*i);
                                  }
         printf("%4d ",j*i); 
                         }
@@ -515,4 +516,4 @@ for(i=1;i<=13;i++)  {
 getchar();
 return 0;
 }
-
+```

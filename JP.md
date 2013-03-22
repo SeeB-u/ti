@@ -479,3 +479,15 @@ char i='a';
     return 0;
 }
 ```
+---
+Inna wersja programu kończacego sie gdy pojawi sie x lub X
+```c
+#include <stdio.h>
+int main() {
+char i;
+    while((i=getchar())!='x' && i!='X')
+    putchar(i);
+    getchar();
+    return 0;
+}
+```

@@ -120,3 +120,43 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+Dodano program wypisujacy dni tygodnia:
+
+```c
+#include <stdio.h>
+int main() {
+int x;
+printf("Podaj dzień: ");
+scanf("%d", &x);
+x=x%7;
+      switch(x) {
+          case 1:
+          printf("Poniedzialek");
+          break;
+          case 2:
+          printf("Wtorek");
+          break;
+          case 3:
+          printf("Sroda");
+          break;
+          case 4:
+          printf("Czwartek");
+          break;
+          case 5:
+          printf("Piatek");
+          break;
+          case 6:
+          printf("Sobota");
+          break;
+          case 0:
+          printf("Niedziela");
+          break;
+          }
+    getchar();
+    getchar();
+    return 0;
+}
+```

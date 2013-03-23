@@ -47,14 +47,16 @@ Kod programu wypisujacego liczby doskonale:
 ```c
 #include <stdio.h>
 int main() {
-    int i, j=0, suma=0;
+    int i, j=0, suma=0, k=0;
     for(i=1;i<=10000;i++) {
                         suma=0;
                         for(j=1;j<i;j++)
                                          if(i%j==0)
                                          suma=suma+j;
-                                         if(suma==i)                      
-                                         printf("\n%d",suma); 
+                                         if(suma==i){
+                                         k++;                      
+                                         printf("\n Oto %d liczba doskonala = %d",k,suma); 
+                                         }
                            }
     getchar();
     return 0;

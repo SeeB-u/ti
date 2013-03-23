@@ -131,7 +131,6 @@ int main() {
 int x;
 printf("Podaj dzień: ");
 scanf("%d", &x);
-x=x%7;
       switch(x) {
           case 1:
           printf("Poniedzialek");

@@ -98,15 +98,19 @@ int main() {
     double min=1/zero;  /*plus nieskonczonosc*/
     double x;
     int i,n;
+    do {
     printf("Podaj ilosc liczb: ");
     scanf("%d",&n);
+    if(n<1)
+    printf("\nco najmniej 2\n\n ");
+}
+    while(n<1);
     for(i=1;i<=n;i++) {
                      printf("Podaj liczbe nr %d: ", i);
                      scanf("%lf",&x);
                      if(x<min)
-                              min=x;
-                     else 
-                          if(x>max)
+                          min=x;
+                     if(x>max)
                           max=x;
                        }
                        printf("\nLiczba najmniejsza to: %.14lf",min);

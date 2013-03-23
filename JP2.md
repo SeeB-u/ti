@@ -87,3 +87,32 @@ int main () {
 return 0;
 }
 ```
+
+Kod programu szukajacego wartosc minimalna i maksymalna:
+
+```c
+#include <stdio.h>
+int main() {
+    double zero=0.0;
+    double max=-1/zero; /*minus nieskonczonosc*/
+    double min=1/zero;  /*plus nieskonczonosc*/
+    double x;
+    int i,n;
+    printf("Podaj ilosc liczb: ");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++) {
+                     printf("Podaj liczbe nr %d: ", i);
+                     scanf("%lf",&x);
+                     if(x<min)
+                              min=x;
+                     else 
+                          if(x>max)
+                          max=x;
+                       }
+                       printf("\nLiczba najmniejsza to: %.14lf",min);
+                       printf("\nLiczba najwieksza to: %.14lf", max);
+    getchar();
+    getchar();
+    return 0;
+}
+```

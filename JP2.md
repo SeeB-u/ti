@@ -7,7 +7,7 @@ int main() {
     double a,b,c,delta,x1,x2;
     printf("Podaj parametr a: ");
     scanf("%lf", &a);
-    if(a<=0)     {
+    if(a==0)     {
     printf("\n!To nie jest trojmian kwadratowy!");
     getchar();
     getchar();

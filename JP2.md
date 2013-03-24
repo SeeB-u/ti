@@ -129,7 +129,7 @@ Dodano program wypisujacy dni tygodnia:
 #include <stdio.h>
 int main() {
 int x;
-printf("Podaj dzień: ");
+printf("Podaj dzien tygodnia: ");
 scanf("%d", &x);
       switch(x) {
           case 1:
@@ -153,6 +153,9 @@ scanf("%d", &x);
           case 0:
           printf("Niedziela");
           break;
+          default:
+          printf("Zly dzien tygodnia");
+    	  break;
           }
     getchar();
     getchar();

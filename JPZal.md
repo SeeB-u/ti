@@ -30,10 +30,26 @@ int main() {
 }
 ```
 
+W pierwszej wersji program:
+* wykonuje stałą ilość kroków (ilość sumowanych wyrazów szeregu, czyli cykli pętli), co sprawia, że jest słaby jakościowo,
+* dodatkowo wypisuje, co krok:
+	* który to krok,
+	* wartość wyrazu,
+	* sumę szeregu.
+
 
 ---
+---
 
-Dodano:
+
+W tej wersji program:
+
+* sumuje szereg, aż do osiągnięcia przez wyraz szeregu wartości bardzo małej (delta),
+* oblicza błąd względny obliczonej sumy szeregu względem funkcji wbudowanej sin(),
+* nadal wyświetla, który to krok,
+* nadal pokazuje wartość wyrazu.
+
+Podsumowując - dodano:
 
 * użyto deklaracji stałych preprocesora (wartość delta),
 * wykonywanie pętli dla zmiennej wartości (delta),
@@ -71,4 +87,5 @@ int main() {
 		return 0;
 		}
 ```
+
 ---

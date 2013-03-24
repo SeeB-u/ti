@@ -44,26 +44,26 @@ Linki oraz zdjęcia:
 
 * Dodawanie klucza: ustawienia > ssh key > add ssh key > nazwa + klucz;
 * Generowanie kluczy w linuxie: ssh-keygen > odczytywanie cat ~/.ssh/id_rsa.pub (sprawdzenie nazw plików: ls ~/.ssh/).
-* Kontynuacja dodawania klucza > skopiować klucz od ssh-rsa > paste na strone i potwierdzić hasłem.
+* Kontynuacja dodawania klucza > skopiować klucz od ssh-rsa > wkleić na stronę i potwierdzić hasłem.
 * Klonowanie: git clone **adres z ssh** lub git clone i adres kogoś.
 
 ---
 
 Podstawowe komendy:<br>
-* ls _wyświetla zawartość katalogu_ <br>
-* ls -l _wyświetla szczegółowo zawartość kataslogu_<br>
-* cd _przemieszczanie się w strukturze katalogów_ <br>
-* nano _edytor tekstowy_ <br>
-* rm _kasowanie pliku_ <br>
-* git rm _kasowanie pliku w repozytorium_ <br>
-* mv _zmiana nazwy pliku_ <br>
-* git mv _zmiana nazwy pliku w repozytorium_ <br>
-* git status _podpowiada co się stało_ <br>
-* git checkout -- plik _przywraca plik_ <br>
-* git reset HEAD plik _przywraca plik_ <br>
-* git commit -m "..." _opisuje zdarzenie, później można zachować zmiany na github_ <br>
-* git push  _przerzuca repozytorium na githuba_ <br>
-* git pull _ściąga nowe rzyczy z github_
+* **ls** - _wyświetla zawartość katalogu_ <br>
+* **ls -l** - _wyświetla szczegółowo zawartość katalogu_<br>
+* **cd** - _przemieszczanie się w strukturze katalogów_ <br>
+* **nano** - _edytor tekstowy_ <br>
+* **rm** - _kasowanie pliku_ <br>
+* **git rm** - _kasowanie pliku w repozytorium_ <br>
+* **mv** - _zmiana nazwy pliku_ <br>
+* **git mv** - _zmiana nazwy pliku w repozytorium_ <br>
+* **git status** - _podpowiada co się stało_ <br>
+* **git checkout -- plik** - _przywraca plik_ <br>
+* **git reset HEAD plik** - _przywraca plik_ <br>
+* **git commit -m "..."** - _opisuje zdarzenie, później można zachować zmiany na github_ <br>
+* **git push**  - _przerzuca repozytorium na githuba_ <br>
+* **git pull** - _ściąga nowe rzeczy z github_
 
 ---
 Edytor tekstu:
@@ -71,7 +71,7 @@ Sublime Text 2
 Instalacja i uruchomianie:
 
 * ściągnąć i rozpakować plik przy pomocy polecenia:
-**tar jxvf nazwa pliku** jeżeli chemy to można wpisać początek nazwy i wcisnąć "TAB",
+**tar jxvf nazwa pliku** jeżeli chcemy to można wpisać początek nazwy i wcisnąć "TAB",
 * przejść do katalogu rozpakowanego (za pomocą komendy **cd**),
 * zmienić atrybuty przy pomocy **chmod 755 sublime_text**,
 * uruchomić program za pomocą polecenia **./sublime_text**.

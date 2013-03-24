@@ -1,3 +1,8 @@
+Moim zadaniem jest napisanie programu, który liczy wartość funkcji sinus dla zadanego kąta.<br>
+Oczywiście nie mogę korzystać z wbudowanej funkcji sin() (przy użyciu: math.h).<br>
+Z teorii - wartość funkcji sinus można przybliżyć do wartości sumy szeregu Maclaurina = x/1! – x^(3)/3! + x^(5)/5! –x^(7)/7!+…<br>
+
+
 ```c
 #include <stdio.h>
 #include <math.h>
@@ -24,11 +29,13 @@ int main() {
   return 0;
 }
 ```
+
+
 ---
 
 Dodano:
 
-* użyto deklaracji preprocesora (wartość delta),
+* użyto deklaracji stałych preprocesora (wartość delta),
 * wykonywanie pętli dla zmiennej wartości (delta),
 * liczenie błędu względnego,
 * użyto operatora logicznego || - lub.

@@ -1,3 +1,5 @@
+#Mój sinus<br>
+
 Moim zadaniem jest napisanie programu, który liczy wartość funkcji sinus dla zadanego kąta.<br>
 Oczywiście nie mogę korzystać z wbudowanej funkcji sin() (przy użyciu: math.h).<br>
 Z teorii - wartość funkcji sinus można przybliżyć do wartości sumy szeregu Maclaurina = x/1! – x^(3)/3! + x^(5)/5! –x^(7)/7!+…<br>
@@ -42,14 +44,14 @@ W pierwszej wersji program:
 ---
 
 
-W tej wersji program:
+###W tej wersji program:
 
 * sumuje szereg, aż do osiągnięcia przez wyraz szeregu wartości bardzo małej (delta),
 * oblicza błąd względny obliczonej sumy szeregu względem funkcji wbudowanej sin(),
 * nadal wyświetla, który to krok,
 * nadal pokazuje wartość wyrazu.
 
-Podsumowując - dodano:
+###Podsumowując - dodano:
 
 * użyto deklaracji stałych preprocesora (wartość delta),
 * wykonywanie pętli dla zmiennej wartości (delta),
@@ -88,4 +90,47 @@ int main() {
 		}
 ```
 
----
+***
+***
+
+###Kolejny etap miał na celu użycie nowych elementów w moim kodzie programu:
+
+* instrukcji warunkowej (eliminuje błąd bezwzględny ujemny),
+* użycie funkcji (nazywanej czasem podprogramem lub procedurą).
+
+Efekt:
+
+```c
+#include <stdio.h>
+#include <math.h>
+#define delta 1e-12
+double sinus(double x) {
+	int n=3, i=1;
+	double wyraz, suma;
+	suma=wyraz=x;
+		printf("\n\n Nr wyrazu |    Wartosc wyrazu | Wartosc szeregu \n");
+		printf("--------------------------------------------------\n");
+		do {
+		wyraz=wyraz*(-(x*x)/((n-1)*n));
+		n=n+2;
+		suma=suma+wyraz;
+		printf(" %9d | %17.14lf | %17.14lf\n", i, wyraz , suma);
+		i++;
+	}
+		while(wyraz>=delta || wyraz<=-delta);
+		return suma;	
+}
+
+int main() {
+	double x, blad;
+	printf("Podaj kat w radianach: ");
+	scanf("%lf",&x);
+	blad=(sin(x)-sinus(x))/sin(x);
+	printf("\n\n Wartosc funkcji wbudowanej sin(%lf)=%17.14lf", x, sin(x));
+	printf("\n\n Blad wzgledny wynosi: %.20lf", blad>=0 ? blad : -blad);	
+	getchar();
+	getchar();
+	return 0;
+		}
+```
+...

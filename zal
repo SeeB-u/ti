@@ -22,3 +22,9 @@ int main() {
 		getchar();
 		return 0;
 		}
+
+A teraz muszę dołożyć:
+
+* funkcję,
+* pętlę wykonywać nie dla wartości stałej, tylko dla zmiennej,
+* policzyć błąd względny dla otrzymanej wartości względem funkcji wbudowanej sin().

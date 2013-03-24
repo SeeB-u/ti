@@ -65,14 +65,14 @@ Pierwszy poznany program to MatLab (MATrix LABoratory)
 
 ###Znaki specjalne:
 
-* **.**
-* **,**
-* **;**
-* **:**
-* **()**
-* **[]**
-* **{}**
-* **'**
-* **...**
-* **@**
-* **\**
+* **.** - kropka dziesiętna, specjalne działanie,
+* **,** - separator, występuje na końcu wyrażeń, jeżeli znajdują się w jednej linii (a=6, b=12), rozdziela argumenty funkcji (f(x,y)),
+* **;** - nie wyświetla wyniku, separator w wektorze kolumnowym,
+* **:** - separator w tworzeniu wektora,
+* **()** - argumenty funkcji, wyrażenia arytmetyczne, ...,
+* **[]** - tworzenie tablicy,
+* **{}** - ?
+* **'** - łańcuch znaków, transpozycja wektora,
+* **...** - kontynuacja w następnej linii,
+* **@** - uchwyt funkcji,
+* **\** - rozwiązuje układy (A\b - opis wkrótce), wprowadzanie specjalnych znaków (liter greckich).

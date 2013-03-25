@@ -1,4 +1,6 @@
-# JP
+# Języki programowania (C) 
+
+## - wstęp
 
 ```c
 int main() {
@@ -64,10 +66,10 @@ Także można użyć:
 ```c
 puts("Podaj dlugosc promienia:")
 ```
--działa tylko do napisów.
+- działa tylko do napisów.
 
 ---
-Kod programu przeliczającego temperatury (skal Celsjusza i Fahrenheita) -działający w pętli while:
+Kod programu przeliczającego temperatury (skal Celsjusza i Fahrenheita) - działający w pętli while:
 
 ```c
 #include <stdio.h>
@@ -111,7 +113,7 @@ int main () {
 ```
 
 czasami trzeba pamiętać, aby liczby wpisywać w następujący sposób 9.0, a nie 9 itd.<br>
-Wynik działania jest typu takiego, jakiego była najbardziej zprecyzowana liczba w działaniu.<br>
+Wynik działania jest typu takiego, jakiego była najbardziej sprecyzowana liczba w działaniu.<br>
 Sposób wyświetlania %5.1lf oznacza, że liczba będzie wyświetlona na 5 polach z dokładnością do 1 miejsca po przecinku<br>
 <br><br><br>
 
@@ -134,7 +136,7 @@ Przy czym:
 ```c
 #define LOWER 0
 ```
-stałe preprocesora -pamiętać, aby nie używać średnika!
+stałe preprocesora - pamiętać, aby nie używać średnika!
 
 ---
 
@@ -204,316 +206,3 @@ putchar(' ');
 wyświetla pojedynczy znak.
 <br>
 *W apostrofach umieszczamy pojedynczy znak.
-
-***
-Kod programu służącego do wypisywania liczb całkowitych od 0 do 23
-
-*pętla for:
-
-```c
-#include <stdio.h>
-int main() {
-int i;
-for (i=0; i<=23; i++) {
-printf("%d,", i);
-}
-getchar();
-return 0;
-}
-```
-
-*pętla while:
-
-```c
-#include <stdio.h>
-int main() {
-int i=0;
-while (i<=23) {
-printf("%d,", i);
-i++;
-}
-getchar();
-return 0;
-}
-```
-
-*pętla do-while:
-
-```c
-#include <stdio.h>
-int main() {
-int i=0;
-do {
-printf("%d,", i);
-i++;
-}
-while(i<=23);
-getchar();
-return 0;
-}
-```
-
-Połączenie wszystkich 3 pętli w jednym programie -potrójnie wyświetla listę:
-
-```c
-#include <stdio.h>
-int main() {
-int i;
-for (i=0; i<=23; i++) {
-printf("%d,", i);
-}
-putchar('\n');
-
-
-i=0;
-while (i<=23) {
-printf("%d,", i);
-i++;
-}
-putchar('\n');
-
-
-i=0;
-do {
-printf("%d,", i);
-i++;
-}
-while(i<=23);
-
-getchar();
-return 0;
-}
-```
-
----
-
-Kod programu wypisującego liczby od -3.5 do 7.5 z krokiem co 0.5 za pomocą 2 różnych pętli:
-
-```c
-#include <stdio.h>
-int main() {
-double i;
-for (i=-3.5; i<=7.5; i=i+0.5) {
-    printf("%.1lf,", i);
-}
-
-printf("\n\n\n");
-
-i=-3.5;
-while (i<=7.5) {
-      printf("%4.1lf,\n", i);
-      i=i+0.5;
-}
-getchar();
-return 0;
-}
-```
-
----
-
-Kod programu służącego do liczenia średniej z podanych liczb (użytkownik sam wybiera ilość liczb):
-
-```c
-# include <stdio.h>
-int main () {
-    int n, i;
-    double x, suma=0.0, srednia;
-    do     {
-    printf("Podaj ilosc liczb (co najmniej 1):");
-    scanf("%d", &n);
-    }
-    while(n<1);
-    
-    for(i=1;i<=n;i++) {
-                     printf("Podaj %d liczbe:", i);
-                     scanf("%lf", &x);
-                     suma=suma+x;
-                     }
-    srednia=suma/n;
-    printf("Suma podanych %d liczb wynosi: %lf \n", n, suma);
-    printf("Srednia z podanych %d liczb wynosi: %lf", n,srednia);
-    getchar();
-    getchar();
-    return 0;
-}
-```
-
----
-
-Kod programu wyświetlającego kwadraty i sześciany liczb od 1 do podanej liczby przez użytkownika:
-
-```c
-#include <stdio.h>
-int main() {
-int i, n;
-    printf("Podaj liczbe:");
-    scanf("%d", &n);
-    for(i=1;i<=n;i++) {  						/*Pętla for*/
-	printf("%d %d %d \n", i, i*i, i*i*i);
-    }
-    
-    printf("\n");								/*oddzielenie wyników*/
-    
-    i=1;										/*Pętla while*/
-    while(i<=n)	{
-	printf("%d %d %d \n", i, i*i, i*i*i);
-	i++;
-    }
-    
-    printf("\n");								/*oddzielenie wyników*/
-    
-    i=1;										/*Pętla do-while*/
-    do	{
-	printf("%d %d %d \n", i, i*i, i*i*i);
-	i++;
-		}
-    while(i<=n);
-    getchar();
-    getchar();
-    return 0;
-}
-```
-
----
-
-Kod programu liczącego sumę kwadratów liczb naturalnych od 3 do 15:
-
-```c
-#include <stdio.h>
-int main() {
-int i, suma=0;
-    for(i=3;i<=15;i++) {	/*Pętla for*/
-		suma=suma+(i*i);
-	}
-	printf("%d \n",suma);
-	
-	printf("\n");		/*Rozdzielenie wyników */
-	
-	
-	i=3;			/*Pętla while; w tym miejscu ustawiamy i */
-	suma=0;			/*wyzerowanie sumy, ponieważ nie jest już =0*/
-	while(i<=15)	{
-	suma=suma+(i*i);
-	i++;
-	}
-	printf("%d \n",suma);
-    getchar();
-    return 0;
-}
-```
----
-
-Kod programu wypisującego wartości funkcji sin i cos dla kątów od 0 do 180 stopni ze skokiem 30 stopni:
-
-```c
-#include <stdio.h>
-#include <math.h>
-int main() {
-double i;
-    for(i=0;i<=180;i=i+30) {
-       printf("sin(%.0lf)= %lf \n",i,sin(i*M_PI/180));
-       printf("cos(%.0lf)= %lf \n\n",i ,cos(i*M_PI/180));
-}
-    getchar();
-    return 0;
-}
-```
----
-Kod programu, który wyświetla tabliczkę mnożenia do 13:
-
-```c
-#include <stdio.h> 
-int main() 
-{ 
-int i,j; 
-for(i=1;i<=13;i++) 	{ 
-	for(j=1;j<=13;j++)	{
-		printf("%4d ",j*i); 
-						}
-	putchar('\n'); 
-					} 
-getchar();
-return 0;
-}
-```
-
----
-
-Nieudana próba napisania kodu programu, który działa w pętli, aż użytkownik nie wciśnie "x"
-
-```c
-#include <stdio.h>
-#define znak 'x'
-int main() {
-char i='a';
-    while(i!=znak)    {
-       printf("Podaj litere:");
-       scanf("%c", &i);
-       printf("Podales litere:%c \n\n",i);
-       getchar();
-	}
-    getchar();
-    return 0;
-}
-```       
-
-Już działa program, potrzebna była jeszcze linijka z:
-
-```c
-getchar();
-```
-, ponieważ w buforze był "enter" co psuło program.
-
----
-
-Kod programu, który wywietla litery od a do k oraz wywietla ich kod ADCII w systemie dziesitnym oraz szesnastkowym:
-
-```c
-#include <stdio.h>
-int main() {
-char i='a';
-    for(i='a';i<='k';i++) {
-    printf("Litera: %c znak ASCII: %3d szesnastkowo: %2x \n",i,i,i);
-    }
-    getchar();
-    return 0;
-}
-```
----
-Inna wersja programu kończacego sie gdy pojawi sie x lub X
-```c
-#include <stdio.h>
-int main() {
-char i;
-    while((i=getchar())!='x' && i!='X')
-    putchar(i);
-    getchar();
-    return 0;
-}
-```
-
-Ulepszono program - tabliczka mnożenia:
-
-```c
-#include <stdio.h> 
-int main() 
-{ 
-int i,j;
-printf("    |");
-for(i=1;i<=13;i++)  {
-                    printf("%4d ",i);
-                    }
-printf("\n----|----------------------------------------------------------------\n");                 
-for(i=1;i<=13;i++)  { 
-    for(j=1;j<=13;j++)  {
-                                                if(j==1){
-                                 printf("%3d |",j*i);
-                                 }
-        printf("%4d ",j*i); 
-                        }
-    putchar('\n'); 
-                    } 
-getchar();
-return 0;
-}
-```

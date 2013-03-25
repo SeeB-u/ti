@@ -1,5 +1,6 @@
-Kod programu liczacego miejsca zerowe trojmianu kwadratowego:
+###Treść zadania pierwszego:
 
+"Napisz program liczący pierwiastki trójmianu kwadratowego: a*x^2+b*x+c=0"
 ```c
 #include <stdio.h>
 #include <math.h>
@@ -42,7 +43,9 @@ int main() {
 
 ---
 
-Kod programu wypisujacego liczby doskonale:
+###Treść zadania drugiego:
+
+"Znajdź liczby o tej własności, że suma dzielników właściwych liczby jest równa zadanej liczbie, np. 6=1+2+3.<br> Są to tak zwane liczby doskonałe."
 
 ```c
 #include <stdio.h>
@@ -63,8 +66,10 @@ int main() {
 }
 ```
 
-Kod programu wypisujacego trojki pitagorejskie:
+###Treść zadania trzeciego:
 
+"Wyświetl 20 różnych (tj. bez permutacji liczb) trójek pitagorejskich, tzn. takich liczb całkowitych dodatnich a, b i c, że a^2+b*2=c^2."
+Interesuje nas pierwsze dwadzieścia trójek.
 ```c
 #include <stdio.h>
 #include <math.h>
@@ -88,7 +93,15 @@ return 0;
 }
 ```
 
-Kod programu szukajacego wartosc minimalna i maksymalna:
+###Treść zadania czwartego:
+
+"Napisz program podający najmniejszą i największą z podanych liczb zmiennoprzecinkowych.<br> Uwaga:, aby uzyskać nieskończoności przydatne w programie można napisać:<br> 
+```c 
+double zero=0.0;
+double max=-1/zero; /*minus nieskonczonosc*/<br>
+double min=1/zero; /*plus nieskonczonosc*/<br> 
+``` 
+"
 
 ```c
 #include <stdio.h>
@@ -123,7 +136,9 @@ int main() {
 
 ---
 
-Dodano program wypisujacy dni tygodnia:
+###Treść zadania piątego:
+
+"Napisz program wypisujący słownie dzień tygodnia, jeżeli numer dnia tygodnia jest znany jako liczba (np. 3).<br> Użyj instrukcji switch-case.
 
 ```c
 #include <stdio.h>

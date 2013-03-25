@@ -104,6 +104,21 @@ Efekt:
 #include <stdio.h>
 #include <math.h>
 #define delta 1e-12
+
+double sinus(double x);
+
+int main() {
+	double x, blad;
+	printf("Podaj kat w radianach: ");
+	scanf("%lf",&x);
+	blad=(sin(x)-sinus(x))/sin(x);
+	printf("\n\n Wartosc funkcji wbudowanej sin(%lf)=%17.14lf", x, sin(x));
+	printf("\n\n Blad wzgledny wynosi: %.20lf", blad>=0 ? blad : -blad);	
+	getchar();
+	getchar();
+	return 0;
+		}	
+		
 double sinus(double x) {
 	int n=3, i=1;
 	double wyraz, suma;
@@ -120,17 +135,5 @@ double sinus(double x) {
 		while(wyraz>=delta || wyraz<=-delta);
 		return suma;	
 }
-
-int main() {
-	double x, blad;
-	printf("Podaj kat w radianach: ");
-	scanf("%lf",&x);
-	blad=(sin(x)-sinus(x))/sin(x);
-	printf("\n\n Wartosc funkcji wbudowanej sin(%lf)=%17.14lf", x, sin(x));
-	printf("\n\n Blad wzgledny wynosi: %.20lf", blad>=0 ? blad : -blad);	
-	getchar();
-	getchar();
-	return 0;
-		}
 ```
 ...

@@ -136,7 +136,9 @@ double sinus(double x) {
 		return suma;	
 }
 ```
-...
+
+***
+***
 
 ###Kolejne poprawki:
 * zmniejszenie kodu programu o jedną zmienną (i),
@@ -172,6 +174,50 @@ double sinus(double x) {
         	wyraz=wyraz*(-(x*x)/((n-1)*n));
         	suma=suma+wyraz;
         	n+=2;
+    }
+        return suma;    
+}
+```
+
+***
+***
+
+###Drobne poprawki:
+
+* zmiana pętli while na pętlę for,
+* użycie skróconych wyrażeń,
+* zmiana nomenklatury,
+* zwiększenie dokładności programu:
+
+```c
+#include <stdio.h>
+#include <math.h>
+#define delta 1e-15
+
+double sinus(double x);
+
+int main() {
+    double x, blad;
+    printf("Podaj kat w radianach: ");
+    scanf("%lf",&x);
+    blad=(sin(x)-sinus(x))/sin(x);
+    printf("\n\n Wartosc funkcji wbudowanej sin(%lf)=%18.15lf", x, sin(x));
+    printf("\n\n Blad wzgledny wynosi: %.20lf", blad>=0 ? blad : -blad);    
+    getchar();
+    getchar();
+    return 0;
+        }   
+
+double sinus(double x) {
+    int n;
+    double wyraz, suma;
+    suma=wyraz=x;
+    printf("\n\n Nr wyrazu |     Wartosc wyrazu |       Suma szeregu \n");
+    printf("----------------------------------------------------\n");
+ 	for(n=3;wyraz>=delta || wyraz<=-delta; n+=2) {
+        	printf(" %9d | %18.15lf | %18.15lf\n", (n-1)/2, wyraz , suma);
+        	wyraz=wyraz*(-(x*x)/((n-1)*n));
+        	suma=suma+wyraz;
     }
         return suma;    
 }

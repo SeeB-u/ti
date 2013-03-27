@@ -137,3 +137,42 @@ double sinus(double x) {
 }
 ```
 ...
+
+###Kolejne poprawki:
+* zmniejszenie kodu programu o jedną zmienną (i),
+* poprawienie błędu - poprzednio program robił o jeden krok w pętli za dużo:
+
+```c
+#include <stdio.h>
+#include <math.h>
+#define delta 1e-12
+
+double sinus(double x);
+
+int main() {
+    double x, blad;
+    printf("Podaj kat w radianach: ");
+    scanf("%lf",&x);
+    blad=(sin(x)-sinus(x))/sin(x);
+    printf("\n\n Wartosc funkcji wbudowanej sin(%lf)=%17.14lf", x, sin(x));
+    printf("\n\n Blad wzgledny wynosi: %.20lf", blad>=0 ? blad : -blad);    
+    getchar();
+    getchar();
+    return 0;
+        }   
+
+double sinus(double x) {
+    int n=3;
+    double wyraz, suma;
+    suma=wyraz=x;
+    printf("\n\n Nr wyrazu |    Wartosc wyrazu |   Wartosc szeregu \n");
+    printf("--------------------------------------------------\n");
+ 	while(wyraz>=delta || wyraz<=-delta) {
+        	printf(" %9d | %17.14lf | %17.14lf\n", (n-1)/2, wyraz , suma);
+        	wyraz=wyraz*(-(x*x)/((n-1)*n));
+        	suma=suma+wyraz;
+        	n+=2;
+    }
+        return suma;    
+}
+```

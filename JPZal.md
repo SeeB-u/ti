@@ -187,7 +187,8 @@ double sinus(double x) {
 * zmiana pętli while na pętlę for,
 * użycie skróconych wyrażeń,
 * zmiana nomenklatury,
-* zwiększenie dokładności programu:
+* zwiększenie dokładności programu,
+* skrócenie zapisu funkcji sinus(x):
 
 ```c
 #include <stdio.h>
@@ -214,10 +215,9 @@ double sinus(double x) {
     suma=wyraz=x;
     printf("\n\n Nr wyrazu |     Wartosc wyrazu |       Suma szeregu \n");
     printf("----------------------------------------------------\n");
- 	for(n=3;wyraz>=delta || wyraz<=-delta; n+=2) {
-        	printf(" %9d | %18.15lf | %18.15lf\n", (n-1)/2, wyraz , suma);
-        	wyraz=wyraz*(-(x*x)/((n-1)*n));
-        	suma=suma+wyraz;
+    for(n=3;wyraz>=delta || wyraz<=-delta; n+=2,suma+=wyraz) {
+            printf(" %9d | %18.15lf | %18.15lf\n", (n-1)/2, wyraz , suma);
+            wyraz=wyraz*(-(x*x)/((n-1)*n));
     }
         return suma;    
 }

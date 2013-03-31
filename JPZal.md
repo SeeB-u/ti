@@ -226,7 +226,8 @@ double sinus(double x) {
 ***
 ###Kolejne udoskonalenia:
 
-* zamiana pętli **for** na **do – while** w celu zmniejszenia liczby wykonywanych kroków, które są niepotrzebne:
+* zamiana pętli **for** na **do – while**,
+* zmniejszenie liczby wykonywanych kroków, które są niepotrzebne:
 
 ```c
 #include <stdio.h>
@@ -249,8 +250,7 @@ int main() {
 
 double sinus(double x) {
     int n=1;
-    double wyraz, suma=0.0;
-    wyraz=x;
+    double wyraz=x, suma=0.0;
     printf("\n\n Nr wyrazu |     Wartosc wyrazu |       Suma szeregu \n");
     printf("----------------------------------------------------\n");
     do

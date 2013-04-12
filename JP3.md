@@ -101,3 +101,34 @@ double potegaAn(double a, int n) {
 }
 ```
 
+### Treść zadania 4 jest zbyt skomplikowana
+w skrócie - napisać funkcję, która liczy pierwiastek z liczby oraz porównuje go z pierwiastkiem z tej liczby z funkcji wbudowanej
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+double pierwA(double a);
+
+int main() {
+    double a,x,y, blad;
+    puts("Podaj liczbe: ");
+    scanf("%lf",&a);//Będzie liczony pierwiastek z tej liczby "a"
+    x=pierwA(a);    //Pierwiastek policzony moją funkcją
+    y=sqrt(a);      //Pierwiastek policzony funkcją wbudowaną sqrt
+    blad=(x-y)/y;   //Błąd względny
+    printf("\n\n Pierwiastek z liczby %lf wynosi %lf, \n\n a z funkcji sqrt() wynosi\
+ %lf, \n\n zatem blad wzgledny wynosi %.16le", a, x, y, blad>=0 ? blad : -blad);
+    getchar();
+    getchar();
+    return 0;
+        }
+        
+double pierwA(double a) {
+    double x, epsilon=1e-15;
+    x=(a/2.0)+1.0;
+    while((x-(a/x))>epsilon*x || (x-(a/x))<-epsilon*x)
+    x=(x+(a/x))/2.0;
+    return x;
+    }
+```

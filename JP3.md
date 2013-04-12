@@ -30,21 +30,21 @@ Napisz funkcję warBezwzgledna zwracajaca wartość bezwzględną z liczby całk
 ```c
 #include <stdio.h>
 
-double wartBezwzgledna(double x);
+int wartBezwzgledna(int x);
 
 int main() {
-    double x,y;
+    int x,y;
     puts("Podaj liczbe: ");
-    scanf("%lf",&x);
+    scanf("%d",&x);
     y=wartBezwzgledna(x);
-    printf("\n\n Wartosc bezwzgledna z %lf wynosi %lf", x, y);
+    printf("\n\n Wartosc bezwzgledna z %d wynosi %d", x, y);
     getchar();
     getchar();
     return 0;
         }   
 
-double wartBezwzgledna(double x) {
-    if(x<0)
+int wartBezwzgledna(int x) {
+    if(x<=0)
     x=-x;
     return x;    
 }

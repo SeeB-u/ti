@@ -45,7 +45,7 @@ int main() {
 
 int wartBezwzgledna(int x) {
     if(x<=0)
-    x=-x;
+    x=0-x;
     return x;    
 }
 ```

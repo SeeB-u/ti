@@ -127,7 +127,7 @@ int main() {
 double pierwA(double a) {
     double x, epsilon=1e-15;
     x=(a/2.0)+1.0;
-    while((x-(a/x))>epsilon*x || (x-(a/x))<-epsilon*x)
+    while((x-(a/x))>epsilon*x || (x-(a/x))<-epsilon*x) // lub fabs(x-a/x)>epsilon*x
     x=(x+(a/x))/2.0;
     return x;
     }

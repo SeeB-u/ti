@@ -49,3 +49,25 @@ int wartBezwzgledna(int x) {
     return x;    
 }
 ```
+
+### Treść zadania 4
+Napisz funkcję obliczającą a do potęgi n dla n należącego do N za pomocą pętli.
+
+```c
+#include <stdio.h>
+int main() {
+    double a,x=1;
+    int n, i;
+    puts("Podaj liczbe: ");
+    scanf("%lf",&a);
+    puts("Podaj wykladnik (liczba naturalna): ");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++){
+    x=x*a;
+}
+    printf("\n\n Wartosc %lf do potegi %d wynosi %lf ", a, n, x);
+    getchar();
+    getchar();
+    return 0;
+        }
+```

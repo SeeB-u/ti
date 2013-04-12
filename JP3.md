@@ -165,3 +165,44 @@ int potegaAn(int a, int n) {
     return p;
 }
 ```
+
+### Treść zadania 6
+Rozbuduj funkcję z poprzedniego zadania tak, aby funkcja działała także dla ujemnych potęg (n całkowite) i dla a będących typu double.
+
+```c
+#include <stdio.h>
+double potegaAn(double a, int n);
+
+int main() {
+    int n;
+    double a, p;
+    puts("Podaj liczbe: ");
+    scanf("%lf",&a);
+    puts("Podaj wykladnik (liczba naturalna): ");
+    scanf("%d",&n);
+    p=potegaAn(a,n);
+    printf("\n\n Wartosc %lf do potegi %d wynosi %lf ", a, n, p);
+    getchar();
+    getchar();
+    return 0;
+        }   
+        
+double potegaAn(double a, int n) {
+    int i=n, minus=0;
+    double p=1.0, q=a;
+           if(i<0){
+           minus=1;
+            i=-i;
+                 }
+                 while(i>0){
+                      if(i%2!=0)
+                      p=p*q;
+                      q=q*q;
+                      i=i/2;
+                            }
+                     if(minus==0)             
+                     return p;
+                     else
+                     return (1.0/p);
+}
+```

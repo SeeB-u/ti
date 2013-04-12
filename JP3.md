@@ -50,7 +50,7 @@ int wartBezwzgledna(int x) {
 }
 ```
 
-### Treść zadania 4
+### Treść zadania 3
 Napisz funkcję obliczającą a do potęgi n dla n należącego do N za pomocą pętli.
 
 ```c

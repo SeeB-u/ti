@@ -45,7 +45,7 @@ int main() {
 
 int wartBezwzgledna(int x) {
     if(x<=0)
-    x=0-x;
+    x=-x;
     return x;    
 }
 ```
@@ -71,3 +71,33 @@ int main() {
     return 0;
         }
 ```
+
+lub jako funkcja
+
+```c
+#include <stdio.h>
+double potegaAn(double a, int n);
+
+int main() {
+    double a, x;
+    int n;
+    puts("Podaj liczbe: ");
+    scanf("%lf",&a);
+    puts("Podaj wykladnik (liczba naturalna): ");
+    scanf("%d",&n);
+    x=potegaAn(a,n);
+    printf("\n\n Wartosc %lf do potegi %d wynosi %lf ", a, n, x);
+    getchar();
+    getchar();
+    return 0;
+        }   
+double potegaAn(double a, int n) {
+    int i;
+    double x=1.0;
+    for(i=1;i<=n;i++){
+    x=x*a;
+}
+    return x;
+}
+```
+

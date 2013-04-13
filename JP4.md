@@ -23,21 +23,22 @@ Zad2
 ```c
 #include <stdio.h>
 #include <ctype.h>
+#define max 32
 int main() {
-    char napis[20];
+    char napis[max];
     int i=0,c,k;
-    printf("Wprowadz napis (malymi literami):");
+    printf("Wprowadz napis:");
     while((c=getchar())!=EOF)
     {
     napis[i]=c;
     i++;
     }
-    k=i;
-     for(i=0;i<k;i++) {
+    k=--i;
+     for(i=0;i<=k;i++) {
                   napis[i]=toupper(napis[i]);
                             i++;
  }   
-    for(i=0;i<k;i++)
+    for(i=0;i<=k;i++)
                 printf("%c", napis[i]);
     getchar();   
     return 0;

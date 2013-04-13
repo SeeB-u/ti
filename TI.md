@@ -75,3 +75,49 @@ Instalacja i uruchomianie:
 * przejść do katalogu rozpakowanego (za pomocą komendy **cd**),
 * zmienić atrybuty przy pomocy **chmod 755 sublime_text**,
 * uruchomić program za pomocą polecenia **./sublime_text**.
+
+***
+***
+
+    body {
+     margin: 28px;  
+     background: yellow;
+     padding: 30px;
+    }  
+
+    html {
+      background: purple;
+      margin : 0; 
+      padding : 0; 
+    }
+
+    p { 
+      background: red;
+    }
+
+    p.warning { 
+      background: green;
+    }
+
+    h3.warning { 
+      background: blue;
+}
+  p.warning:hover {background:orange;
+    }
+h3 em { color: red; font-style: italic}
+
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+</head>
+<body>
+  <p>ala ma kota</p>
+  <p class="warning">basia ma psa</p>
+  <h3 class="warning">Warning!
+    <em>Warning!</em></h3>
+</body>
+</html>

@@ -16,3 +16,30 @@ int main() {
 return 0;
 }
 ```
+
+
+Zad2
+
+```c
+#include <stdio.h>
+#include <ctype.h>
+int main() {
+    char napis[20];
+    int i=0,c,k;
+    printf("Wprowadz napis (malymi literami):");
+    while((c=getchar())!=EOF)
+    {
+    napis[i]=c;
+    i++;
+    }
+    k=i;
+     for(i=0;i<k;i++) {
+                  napis[i]=toupper(napis[i]);
+                            i++;
+ }   
+    for(i=0;i<k;i++)
+                printf("%c", napis[i]);
+    getchar();   
+    return 0;
+}
+```

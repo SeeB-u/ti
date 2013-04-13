@@ -30,16 +30,12 @@ int main() {
     printf("Wprowadz napis:");
     while((c=getchar())!=EOF)
     {
-    napis[i]=c;
+    napis[i]=toupper(c);
     i++;
     }
     k=--i;
-     for(i=0;i<=k;i++) {
-                  napis[i]=toupper(napis[i]);
-                            i++;
- }   
     for(i=0;i<=k;i++)
-                printf("%c", napis[i]);
+    printf("%c", napis[i]);
     getchar();   
     return 0;
 }

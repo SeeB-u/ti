@@ -313,17 +313,17 @@ int main() {
 		puts("Podaj kat w radianach (wartosc koncowa): ");
     	scanf("%lf",&y);
     	if(x>y)								//instrukcja w razie błędu
-    		puts("\n\nWartosc koncowa nie moze byc mniejsza od wartosci poczatkowej - sprobuj ponownie\n\n");
+    		puts("\nWartosc koncowa nie moze byc mniejsza od wartosci poczatkowej - sprobuj ponownie\n\n");
 		}
 	while(y<x);
 	
-    puts("\n\n  Wartosc x |       Moj sinus(x) |   Wbudowany sin(x) | Blad wzgledny"); //konstrukcja tabeli
-    puts("    \n -----------|--------------------|--------------------|--------------");
+    puts("  \n\n  Wartosc x |       Moj sinus(x) |   Wbudowany sin(x) | Blad wzgledny"); //konstrukcja tabeli
+    puts("  ----------|--------------------|--------------------|--------------");
     
 	do {									//pętla - uzupełnianie tabeli ze skokiem = przyrost
 		suma=sinus(x);						//odniesienie do funkcji sinus(x)
     	blad=(sin(x)-suma)/sin(x);			//obliczenie błędu względnego
-    	printf("\n %10.2lf |%19.15lf |%19.15lf |%11.2le", x, suma, sin(x),blad>=0 ? blad : -blad);
+    	printf(" %10.2lf |%19.15lf |%19.15lf |%11.2le\n", x, suma, sin(x),blad>=0 ? blad : -blad);
     	x+=przyrost;
 		}    
 	while(x<=y);

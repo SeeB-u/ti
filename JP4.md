@@ -62,12 +62,14 @@ int main() {
     int i=0,x,k=6,a=0;
     printf("Wprowadz liczbe:");
     scanf("%d",&x);
-    for(i=0;i<=k;i++){
-    if(dane[i]==x){
-    a=1;
-    }
-}
-    printf("%d", a);
+    for(i=0;i<=k;i++)    {
+    	if(dane[i]==x)
+    	a=1;
+						}
+	if(a==1)
+    	printf("\nLiczba %d znajduje sie w tablicy", x);
+	else
+		printf("\nLiczba %d nie znajduje sie w tablicy", x);
     getchar();  
     getchar(); 
     return 0;

@@ -75,3 +75,69 @@ int main() {
     return 0;
 }
 ```
+
+### Zadanie 4
+
+Znajdź maksymalną liczbę w tablicy liczb zmiennoprzecinkowych podanych przez użytkownika. 
+
+```c
+
+```
+
+### Zadanie 5
+
+Napisz funkcję obliczającą średnią arytmetyczną z liczb zawartych w tablicy liczb zmiennoprzecinkowych.
+
+```c
+
+```
+
+### Zadanie 6
+
+Wypisz napis:
+char tekst[]=”Tablica to podstawa programowania.”
+ od końca do początku.
+
+```c
+
+```
+
+### Zadanie 7
+
+Napisz funkcję void odKonca(char napis[]) która odwraca podany napis (taka funkcja jest potrzebna np. do zamiany liczb na system dwójkowy).
+
+```c
+
+```
+
+### Zadanie 8
+
+Napisz funkcję zwracającą najmniejszy i największy element z tablicy liczb zmiennoprzecinkowych podanej jako argument funkcji. 
+
+```c
+
+```
+
+### Zadanie 9
+
+Napisać program, który pobiera od użytkownika n liczb i wczytuje je do tablicy. Napisać funkcję, która zwróci ostatnią liczbę tej tablicy podzielną przez 7. 
+
+```c
+
+```
+
+### Zadanie 10
+
+Napisać funkcję obliczającą iloczyn skalarny dwóch wektorów n-wymiarowych. 
+
+```c
+
+```
+
+### Zadanie 11
+
+Napisz funkcję która transponuje tablicę kwadratową double tab[128][128] podaną jako argument. Napisz i wykorzystaj funkcję void wyswietlMacierz(double m[128][128], int wierszy, int kolumn); 
+
+```c
+
+```

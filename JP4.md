@@ -1,3 +1,11 @@
+## Zadania - tablice
+
+### Zadanie 1
+
+Wypisz wszystkie elementy tablicy:
+int dane[]={ -44 , 5 , 67 , -2 , 0 , 33 , 77 } 
+w kolejności od pierwszego do ostatniego i odwrotnie.
+
 ```c
 #include <stdio.h>
 int main() {
@@ -18,7 +26,9 @@ return 0;
 ```
 
 
-Zad2
+### Zadanie 2
+
+Napisz program, który podany tekst wyświetli wielkimi literami.
 
 ```c
 #include <stdio.h>
@@ -41,7 +51,9 @@ int main() {
 }
 ```
 
-Zad3
+### Zadanie 3
+
+Napisz funkcję sprawdzającą, czy podana przez użytkownika liczba znajduje się w powyższej tablicy. (np. tablicy z zadania 1)
 
 ```c
 #include <stdio.h>

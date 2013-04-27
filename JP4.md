@@ -88,7 +88,68 @@ main ()
 Znajdź maksymalną liczbę w tablicy liczb zmiennoprzecinkowych podanych przez użytkownika. 
 
 ```c
+#include <stdio.h>
+#define rozmiar 5
 
+double emin (double dane[]);    //Funkcja szukająca element największy w tablicy
+double emax (double dane[]);    //Funkcja szukająca element najmniejszy w tablicy
+
+
+int
+main ()
+{
+  double dane[rozmiar], x, max, min;
+  int i;
+  for (i = 0; i < rozmiar; i++)
+    {
+      printf ("Wprowadz liczbe nr %d: ", i + 1);
+      scanf ("%lf", &x);
+      dane[i] = x;
+    }
+
+  max = emax (dane);
+  min = emin (dane);
+
+  for (i = 0; i < rozmiar; i++)
+    printf ("\nElemnt %d tablicy ma wartosc: %lf", i, dane[i]);
+  printf ("\n\nElemnt najwiekszy to: %lf, a najmniejszy to: %lf.", max, min);
+
+  getchar ();
+  getchar ();
+  return 0;
+}
+
+
+
+double
+emin (double dane[])
+{
+
+  int i;
+  double x, min = 1 / 0.0;
+  for (i = 0; i < rozmiar; i++)
+    {
+      x = dane[i];
+      if (x <= min)
+        min = x;
+    }
+  return min;
+}
+
+
+double
+emax (double dane[])
+{
+  int i;
+  double x, max = -1 / 0.0;
+  for (i = 0; i < rozmiar; i++)
+    {
+      x = dane[i];
+      if (x >= max)
+        max = x;
+    }
+  return max;
+}
 ```
 
 ### Zadanie 5
@@ -96,7 +157,45 @@ Znajdź maksymalną liczbę w tablicy liczb zmiennoprzecinkowych podanych przez 
 Napisz funkcję obliczającą średnią arytmetyczną z liczb zawartych w tablicy liczb zmiennoprzecinkowych.
 
 ```c
+#include <stdio.h>
+#define rozmiar 5
 
+double esrednia (double dane[]);        //Funkcja licząca średnią elementów tablicy
+
+
+int
+main ()
+{
+  double dane[rozmiar], x, srednia;
+  int i;
+  for (i = 0; i < rozmiar; i++)
+    {
+      printf ("Wprowadz liczbe nr %d: ", i + 1);
+      scanf ("%lf", &x);
+      dane[i] = x;
+    }
+
+  srednia = esrednia (dane);
+
+  for (i = 0; i < rozmiar; i++)
+    printf ("\nElemnt %d tablicy ma wartosc: %lf", i, dane[i]);
+  printf ("\n\nSrednia to: %lf.", srednia);
+
+  getchar ();
+  getchar ();
+  return 0;
+}
+
+
+double
+esrednia (double dane[])
+{
+  int i;
+  double x, suma = 0.0;
+  for (i = 0; i < rozmiar; i++)
+    suma += dane[i];
+  return suma / rozmiar;
+}
 ```
 
 ### Zadanie 6

@@ -5,13 +5,16 @@
 
 ```c
 #include <stdio.h>
-int main() {
-int i;
-for (i=0; i<=23; i++) {
-printf("%d,", i);
-}
-getchar();
-return 0;
+int
+main ()
+{
+  int i;
+  for (i = 0; i <= 23; i++)
+    {
+      printf ("%d,", i);
+    }
+  getchar ();
+  return 0;
 }
 ```
 
@@ -19,14 +22,17 @@ return 0;
 
 ```c
 #include <stdio.h>
-int main() {
-int i=0;
-while (i<=23) {
-printf("%d,", i);
-i++;
-}
-getchar();
-return 0;
+int
+main ()
+{
+  int i = 0;
+  while (i <= 23)
+    {
+      printf ("%d,", i);
+      i++;
+    }
+  getchar ();
+  return 0;
 }
 ```
 
@@ -34,15 +40,18 @@ return 0;
 
 ```c
 #include <stdio.h>
-int main() {
-int i=0;
-do {
-printf("%d,", i);
-i++;
-}
-while(i<=23);
-getchar();
-return 0;
+int
+main ()
+{
+  int i = 0;
+  do
+    {
+      printf ("%d,", i);
+      i++;
+    }
+  while (i <= 23);
+  getchar ();
+  return 0;
 }
 ```
 
@@ -50,31 +59,36 @@ return 0;
 
 ```c
 #include <stdio.h>
-int main() {
-int i;
-for (i=0; i<=23; i++) {
-printf("%d,", i);
-}
-putchar('\n');
+int
+main ()
+{
+  int i;
+  for (i = 0; i <= 23; i++)
+    {
+      printf ("%d,", i);
+    }
+  putchar ('\n');
 
 
-i=0;
-while (i<=23) {
-printf("%d,", i);
-i++;
-}
-putchar('\n');
+  i = 0;
+  while (i <= 23)
+    {
+      printf ("%d,", i);
+      i++;
+    }
+  putchar ('\n');
 
 
-i=0;
-do {
-printf("%d,", i);
-i++;
-}
-while(i<=23);
+  i = 0;
+  do
+    {
+      printf ("%d,", i);
+      i++;
+    }
+  while (i <= 23);
 
-getchar();
-return 0;
+  getchar ();
+  return 0;
 }
 ```
 
@@ -85,21 +99,25 @@ return 0;
 
 ```c
 #include <stdio.h>
-int main() {
-double i;
-for (i=-3.5; i<=7.5; i=i+0.5) {
-    printf("%.1lf,", i);
-}
+int
+main ()
+{
+  double i;
+  for (i = -3.5; i <= 7.5; i = i + 0.5)
+    {
+      printf ("%.1lf,", i);
+    }
 
-printf("\n\n\n");
+  printf ("\n\n\n");
 
-i=-3.5;
-while (i<=7.5) {
-      printf("%4.1lf,\n", i);
-      i=i+0.5;
-}
-getchar();
-return 0;
+  i = -3.5;
+  while (i <= 7.5)
+    {
+      printf ("%4.1lf,\n", i);
+      i = i + 0.5;
+    }
+  getchar ();
+  return 0;
 }
 ```
 
@@ -109,27 +127,31 @@ return 0;
 "Wczytaj n liczb i wyświetl ich sume i średnią arytmetyczną."
 
 ```c
-# include <stdio.h>
-int main () {
-    int n, i;
-    double x, suma=0.0, srednia;
-    do     {
-    printf("Podaj ilosc liczb (co najmniej 1):");
-    scanf("%d", &n);
+#include <stdio.h>
+int
+main ()
+{
+  int n, i;
+  double x, suma = 0.0, srednia;
+  do
+    {
+      printf ("Podaj ilosc liczb (co najmniej 1):");
+      scanf ("%d", &n);
     }
-    while(n<1);
-    
-    for(i=1;i<=n;i++) {
-                     printf("Podaj %d liczbe:", i);
-                     scanf("%lf", &x);
-                     suma=suma+x;
-                     }
-    srednia=suma/n;
-    printf("Suma podanych %d liczb wynosi: %lf \n", n, suma);
-    printf("Srednia z podanych %d liczb wynosi: %lf", n,srednia);
-    getchar();
-    getchar();
-    return 0;
+  while (n < 1);
+
+  for (i = 1; i <= n; i++)
+    {
+      printf ("Podaj %d liczbe:", i);
+      scanf ("%lf", &x);
+      suma = suma + x;
+    }
+  srednia = suma / n;
+  printf ("Suma podanych %d liczb wynosi: %lf \n", n, suma);
+  printf ("Srednia z podanych %d liczb wynosi: %lf", n, srednia);
+  getchar ();
+  getchar ();
+  return 0;
 }
 ```
 
@@ -140,34 +162,38 @@ int main () {
 
 ```c
 #include <stdio.h>
-int main() {
-int i, n;
-    printf("Podaj liczbe:");
-    scanf("%d", &n);
-    for(i=1;i<=n;i++) {    					/*Pętla for*/
-	printf("%d %d %d \n", i, i*i, i*i*i);
-    }
-    
-    printf("\n");								/*oddzielenie wyników*/
-    
-    i=1;										/*Pętla while*/
-    while(i<=n)	{
-	printf("%d %d %d \n", i, i*i, i*i*i);
-	i++;
-    }
-    
-    printf("\n");								/*oddzielenie wyników*/
-    
-    i=1;										/*Pętla do-while*/
-    do	{
-	printf("%d %d %d \n", i, i*i, i*i*i);
-	i++;
-		}
-    while(i<=n);
-    getchar();
-    getchar();
+  int main ()
+  {
+    int i, n;
+    printf ("Podaj liczbe:");
+    scanf ("%d", &n);
+    for (i = 1; i <= n; i++)
+      {                         /*Pętla for */
+        printf ("%d %d %d \n", i, i * i, i * i * i);
+      }
+
+    printf ("\n");              /*oddzielenie wyników */
+
+    i = 1;                      /*Pętla while */
+    while (i <= n)
+      {
+        printf ("%d %d %d \n", i, i * i, i * i * i);
+        i++;
+      }
+
+    printf ("\n");              /*oddzielenie wyników */
+
+    i = 1;                      /*Pętla do-while */
+    do
+      {
+        printf ("%d %d %d \n", i, i * i, i * i * i);
+        i++;
+      }
+    while (i <= n);
+    getchar ();
+    getchar ();
     return 0;
-}
+  }
 ```
 
 ---
@@ -177,25 +203,29 @@ int i, n;
 
 ```c
 #include <stdio.h>
-int main() {
-int i, suma=0;
-    for(i=3;i<=15;i++) {  /*Pętla for*/
-		suma=suma+(i*i);
-	}
-	printf("%d \n",suma);
-	
-	printf("\n");		/*Rozdzielenie wyników */
-	
-	
-	i=3;			/*Pętla while; w tym miejscu ustawiamy i */
-	suma=0;			/*wyzerowanie sumy, ponieważ nie jest już =0*/
-	while(i<=15)	{
-	suma=suma+(i*i);
-	i++;
-	}
-	printf("%d \n",suma);
-    getchar();
-    return 0;
+int
+main ()
+{
+  int i, suma = 0;
+  for (i = 3; i <= 15; i++)
+    {                           /*Pętla for */
+      suma = suma + (i * i);
+    }
+  printf ("%d \n", suma);
+
+  printf ("\n");                /*Rozdzielenie wyników */
+
+
+  i = 3;                        /*Pętla while; w tym miejscu ustawiamy i */
+  suma = 0;                     /*wyzerowanie sumy, ponieważ nie jest już =0 */
+  while (i <= 15)
+    {
+      suma = suma + (i * i);
+      i++;
+    }
+  printf ("%d \n", suma);
+  getchar ();
+  return 0;
 }
 ```
 
@@ -207,14 +237,17 @@ int i, suma=0;
 ```c
 #include <stdio.h>
 #include <math.h>
-int main() {
-double i;
-    for(i=0;i<=180;i=i+30) {
-       printf("sin(%.0lf)= %lf \n",i,sin(i*M_PI/180));
-       printf("cos(%.0lf)= %lf \n\n",i ,cos(i*M_PI/180));
-}
-    getchar();
-    return 0;
+int
+main ()
+{
+  double i;
+  for (i = 0; i <= 180; i = i + 30)
+    {
+      printf ("sin(%.0lf)= %lf \n", i, sin (i * M_PI / 180));
+      printf ("cos(%.0lf)= %lf \n\n", i, cos (i * M_PI / 180));
+    }
+  getchar ();
+  return 0;
 }
 ```
 
@@ -225,13 +258,16 @@ double i;
 
 ```c
 #include <stdio.h>
-int main() {
-char i='a';
-    for(i='a';i<='k';i++) {
-    printf("Litera: %c znak ASCII: %3d szesnastkowo: %2x \n",i,i,i);
+int
+main ()
+{
+  char i = 'a';
+  for (i = 'a'; i <= 'k'; i++)
+    {
+      printf ("Litera: %c znak ASCII: %3d szesnastkowo: %2x \n", i, i, i);
     }
-    getchar();
-    return 0;
+  getchar ();
+  return 0;
 }
 ```
 
@@ -245,16 +281,19 @@ char i='a';
 ```c
 #include <stdio.h>
 #define znak 'x'
-int main() {
-char i='a';
-    while(i!=znak)    {
-       printf("Podaj litere:");
-       scanf("%c", &i);
-       printf("Podales litere:%c \n\n",i);
-       getchar();
-  }
-    getchar();
-    return 0;
+int
+main ()
+{
+  char i = 'a';
+  while (i != znak)
+    {
+      printf ("Podaj litere:");
+      scanf ("%c", &i);
+      printf ("Podales litere:%c \n\n", i);
+      getchar ();
+    }
+  getchar ();
+  return 0;
 }
 ```
 
@@ -262,12 +301,14 @@ char i='a';
 
 ```c
 #include <stdio.h>
-int main() {
-char i;
-    while((i=getchar())!='x' && i!='X')
-    putchar(i);
-    getchar();
-    return 0;
+int
+main ()
+{
+  char i;
+  while ((i = getchar ()) != 'x' && i != 'X')
+    putchar (i);
+  getchar ();
+  return 0;
 }
 ```
 
@@ -279,43 +320,52 @@ char i;
 * Program - pierwsza wersja:
 
 ```c
-#include <stdio.h> 
-int main() 
-{ 
-int i,j; 
-for(i=1;i<=13;i++)   { 
-	for(j=1;j<=13;j++)	{
-		printf("%4d ",j*i); 
-						}
-	putchar('\n'); 
-					} 
-getchar();
-return 0;
+#include <stdio.h>
+int
+main ()
+{
+  int i, j;
+  for (i = 1; i <= 13; i++)
+    {
+      for (j = 1; j <= 13; j++)
+        {
+          printf ("%4d ", j * i);
+        }
+      putchar ('\n');
+    }
+  getchar ();
+  return 0;
 }
 ```
 
 * Program - wersja ulepszona:
 
 ```c
-#include <stdio.h> 
-int main() 
-{ 
-int i,j;
-printf("    |");
-for(i=1;i<=13;i++)  {
-                    printf("%4d ",i);
-                    }
-printf("\n----|----------------------------------------------------------------\n");                 
-for(i=1;i<=13;i++)  { 
-    for(j=1;j<=13;j++)  {
-                                                if(j==1){
-                                 printf("%3d |",j*i);
-                                 }
-        printf("%4d ",j*i); 
-                        }
-    putchar('\n'); 
-                    } 
-getchar();
-return 0;
+#include <stdio.h>
+int
+main ()
+{
+  int i, j;
+  printf ("    |");
+  for (i = 1; i <= 13; i++)
+    {
+      printf ("%4d ", i);
+    }
+  printf
+    ("\n----|----------------------------------------------------------------\n");
+  for (i = 1; i <= 13; i++)
+    {
+      for (j = 1; j <= 13; j++)
+        {
+          if (j == 1)
+            {
+              printf ("%3d |", j * i);
+            }
+          printf ("%4d ", j * i);
+        }
+      putchar ('\n');
+    }
+  getchar ();
+  return 0;
 }
 ```

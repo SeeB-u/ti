@@ -296,51 +296,61 @@ w taki sposób, aby program wczytywał wartość początkową oraz końcową dzi
 ```c
 #include <stdio.h>
 #include <math.h>
-#define delta 1e-15							//delta - wartość minimalna wyrazu szereguu Maclaurina, która przerwie działanie pętli
+#define delta 1e-15             //delta - wartość minimalna wyrazu szereguu Maclaurina, która przerwie działanie pętli
 
-double sinus(double x);						//deklaracja mojej funkcji liczącej wartość sinusa dla argumentu x
+double sinus (double x);        //deklaracja mojej funkcji liczącej wartość sinusa dla argumentu x
 
-int main() {
-    double x, y, suma, blad, przyrost=0.2;  //x - wartość początkowa
-    										//y - wartość końcowa
-    										//suma - suma szeregu Maclaurina
-    										//blad - błąd względny mojej funkcji względem funkcji wbudowanej sin(x)
-    										//przyrost - przyrost argumentu x w kolejnych krokach
-    
-    do {									//pętla - wczytywanie przedziału
-		puts("Podaj kat w radianach (wartosc poczatkowa): ");
-    	scanf("%lf",&x);    
-		puts("Podaj kat w radianach (wartosc koncowa): ");
-    	scanf("%lf",&y);
-    	if(x>y)								//instrukcja w razie błędu
-    		puts("\nWartosc koncowa nie moze byc mniejsza od wartosci poczatkowej - sprobuj ponownie\n\n");
-		}
-	while(y<x);
-	
-    puts("  \n\n  Wartosc x |       Moj sinus(x) |   Wbudowany sin(x) | Blad wzgledny"); //konstrukcja tabeli
-    puts("  ----------|--------------------|--------------------|--------------");
-    
-	do {									//pętla - uzupełnianie tabeli ze skokiem = przyrost
-		suma=sinus(x);						//odniesienie do funkcji sinus(x)
-    	blad=(sin(x)-suma)/sin(x);			//obliczenie błędu względnego
-    	printf(" %10.2lf |%19.15lf |%19.15lf |%11.2le\n", x, suma, sin(x),blad>=0 ? blad : -blad);
-    	x+=przyrost;
-		}    
-	while(x<=y);
+int
+main ()
+{
+  double x, y, suma, blad, przyrost = 0.2;      //x - wartość początkowa
+  //y - wartość końcowa
+  //suma - suma szeregu Maclaurina
+  //blad - błąd względny mojej funkcji względem funkcji wbudowanej sin(x)
+  //przyrost - przyrost argumentu x w kolejnych krokach
 
-	getchar();
-    getchar();
-    return 0;
-        }   
-
-double sinus(double x) {					//Moja funkcja sinus(x) - definicja funkcji, pobiera argument - x
-    int n;
-    double wyraz, suma;						//suma szeregu Maclaurina
-    suma=wyraz=x;							//w pierwszym kroku suma ciągu = pierwszy wyraz ciągu = argument funkcji - x
- 	for(n=3;wyraz>=delta || wyraz<=-delta; n+=2) {  //pętla działa, dopóki kolejny wartość bezwzględna wyraz szeregu nie przekroczy wartości minimalnej 
-        	wyraz*=(-(x*x)/((n-1)*n));		//obliczanie kolejnego wyrazu szeregu
-        	suma+=wyraz;					//zwiększanie sumy szeregu o obliczony wyraz
+  do
+    {                           //pętla - wczytywanie przedziału
+      puts ("Podaj kat w radianach (wartosc poczatkowa): ");
+      scanf ("%lf", &x);
+      puts ("Podaj kat w radianach (wartosc koncowa): ");
+      scanf ("%lf", &y);
+      if (x > y)                //instrukcja w razie błędu
+        puts
+          ("\nWartosc koncowa nie moze byc mniejsza od wartosci poczatkowej - sprobuj ponownie\n\n");
     }
-    return suma;    						//funkcja zwraca wartość - suma
+  while (y < x);
+
+  puts ("  \n\n  Wartosc x |       Moj sinus(x) |   Wbudowany sin(x) | Blad wzgledny"); //konstrukcja tabeli
+  puts
+    ("  ----------|--------------------|--------------------|--------------");
+
+  do
+    {                           //pętla - uzupełnianie tabeli ze skokiem = przyrost
+      suma = sinus (x);         //odniesienie do funkcji sinus(x)
+      blad = (sin (x) - suma) / sin (x);        //obliczenie błędu względnego
+      printf (" %10.2lf |%19.15lf |%19.15lf |%11.2le\n", x, suma, sin (x),
+              blad >= 0 ? blad : -blad);
+      x += przyrost;
+    }
+  while (x <= y);
+
+  getchar ();
+  getchar ();
+  return 0;
+}
+
+double
+sinus (double x)
+{                               //Moja funkcja sinus(x) - definicja funkcji, pobiera argument - x
+  int n;
+  double wyraz, suma;           //suma szeregu Maclaurina
+  suma = wyraz = x;             //w pierwszym kroku suma ciągu = pierwszy wyraz ciągu = argument funkcji - x
+  for (n = 3; wyraz >= delta || wyraz <= -delta; n += 2)
+    {                           //pętla działa, dopóki kolejny wartość bezwzględna wyraz szeregu nie przekroczy wartości minimalnej
+      wyraz *= (-(x * x) / ((n - 1) * n));      //obliczanie kolejnego wyrazu szeregu
+      suma += wyraz;            //zwiększanie sumy szeregu o obliczony wyraz
+    }
+  return suma;                  //funkcja zwraca wartość - suma
 }
 ```

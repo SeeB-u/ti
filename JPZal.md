@@ -347,7 +347,7 @@ sinus (double x)
   double wyraz, suma;           //suma szeregu Maclaurina
   suma = wyraz = x;             //w pierwszym kroku suma ciągu = pierwszy wyraz ciągu = argument funkcji - x
   for (n = 3; wyraz >= delta || wyraz <= -delta; n += 2)
-    {                           //pętla działa, dopóki kolejny wartość bezwzględna wyraz szeregu nie przekroczy wartości minimalnej
+    {                           //pętla działa, dopóki wartość bezwzględna kolejnego wyrazu szeregu nie przekroczy wartości minimalnej
       wyraz *= (-(x * x) / ((n - 1) * n));      //obliczanie kolejnego wyrazu szeregu
       suma += wyraz;            //zwiększanie sumy szeregu o obliczony wyraz
     }

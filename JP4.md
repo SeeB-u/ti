@@ -91,15 +91,13 @@ Znajdź maksymalną liczbę w tablicy liczb zmiennoprzecinkowych podanych przez 
 #include <stdio.h>
 #define rozmiar 5               //Rozmiar tablicy
 
-double emin (double dane[]);    //Deklaracja funkcji szukającaej element największy w tablicy
-double emax (double dane[]);    //Deklaracja funkcji szukającaej element najmniejszy w tablicy
+double emax (double dane[]);    //Deklaracja funkcji szukającaej element największy w tablicy
 
 int
 main ()
 {
-  double dane[rozmiar], x, max, min;
+  double dane[rozmiar], x, max;
   int i;
-
   for (i = 0; i < rozmiar; i++) //Wczytywanie wartości do tablicy
     {
       printf ("Wprowadz liczbe nr %d: ", i + 1);
@@ -108,33 +106,15 @@ main ()
     }
 
   max = emax (dane);            //Użycie funkcji
-  min = emin (dane);            //Użycie funkcji
 
   for (i = 0; i < rozmiar; i++) //Wypisanie tablicy
     printf ("\nElemnt %d tablicy ma wartosc: %lf", i, dane[i]);
-  printf ("\n\nElemnt najwiekszy to: %lf, a najmniejszy to: %lf.", max, min);  //Wypisanie max i min
+  printf ("\n\nElemnt najwiekszy z tablicy to: %lf.", max);     //Wypisanie max
 
   getchar ();
   getchar ();
   return 0;
 }
-
-
-
-double
-emin (double dane[])            //Definicja funkcji szukającej element najmniejszy w tablicy
-{
-
-  int i;
-  double min = 1 / 0.0;         //Plus nieskończoność
-  for (i = 0; i < rozmiar; i++)
-    {
-      if (dane[i] <= min)
-        min = dane[i];
-    }
-  return min;
-}
-
 
 double
 emax (double dane[])            //Definicja funkcji szukającej element największy w tablicy

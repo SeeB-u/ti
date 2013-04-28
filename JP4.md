@@ -331,7 +331,42 @@ extr (double dane[])
 Napisać program, który pobiera od użytkownika n liczb i wczytuje je do tablicy. Napisać funkcję, która zwróci ostatnią liczbę tej tablicy podzielną przez 7. 
 
 ```c
+#include <stdio.h>
+#define rozmiar 5
 
+int jest7 (int dane[]);
+
+int
+main ()
+{
+  int dane[rozmiar], i, x, a;
+  for (i = 0; i < rozmiar; i++)
+    {
+      printf ("Wprowadz liczbe nr %d: ", i + 1);
+      scanf ("%d", &x);
+      dane[i] = x;
+    }
+  for (i = 0; i < rozmiar; i++)
+    printf ("\nElemnt %d tablicy ma wartosc: %d", i, dane[i]);
+  a = jest7 (dane);
+  if (a == 1)
+    printf ("\n\nNie wystepuje liczba podzielna przez 7");
+  else
+    printf ("\n\nOstatnia podana liczba podzielna przez 7 to: %d", a);
+  getchar ();
+  getchar ();
+  return 0;
+}
+
+int
+jest7 (int dane[])
+{
+  int i, x, a = 1;
+  for (i = 0; i < rozmiar; i++)
+    if (dane[i] % 7 == 0)
+      a = dane[i];
+  return a;
+}
 ```
 
 ### Zadanie 10

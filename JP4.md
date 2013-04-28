@@ -226,7 +226,7 @@ main ()
 }
 ```
 
-### Zadanie 7 (Niepoprawne rozwiązanie)!
+### Zadanie 7
 
 Napisz funkcję void odKonca(char napis[]) która odwraca podany napis (taka funkcja jest potrzebna np. do zamiany liczb na system dwójkowy).
 
@@ -239,29 +239,32 @@ void odKonca (char napis[]);
 int
 main ()
 {
-  char napis[rozmiar], rewers[rozmiar], c;
-  int i, j;
-  for (i = 0; i < rozmiar; i++)
+  char napis[rozmiar], c;
+  int i;
+
+  for (i = 0; i < rozmiar; i++) //Null-owanie tablicy
     napis[i] = '\0';
+    
   i = 0;
-  printf ("Wprowadz napis:");
+
+  printf ("Wprowadz napis:");   //Wczytywanie napisu
   while ((c = getchar ()) != EOF)
     {
       napis[i] = c;
       i++;
     }
-  j = i + 1;
-  for (i = 0; i < rozmiar; i++)
+
+  for (i = 0; i < rozmiar; i++) //Wyświetlanie napisu
     printf ("%c", napis[i]);
-//****************************************
-  void odKonca (char napis[]);
-//*****************************************
+
+  odKonca (napis);              //Użycie funkcji
+
   getchar ();
   return 0;
 }
 
 void
-odKonca (char napis[])
+odKonca (char napis[])          //Funcka do wyświetlania napisu "od tyłu"
 {
   int i, j = rozmiar - 1;
   char rewers[rozmiar];

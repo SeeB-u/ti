@@ -446,55 +446,57 @@ Napisz funkcję która transponuje tablicę kwadratową double tab[128][128] pod
 
 ```c
 #include <stdio.h>
-#define n 3//Rozmiar tablicy
+#define n 3                     //Rozmiar tablicy
 
-double trans(double tab[n][n]);
+double trans (double tab[n][n]);
 
-void wyswietlMacierz(double m[n][n]);
+void wyswietlMacierz (double m[n][n], int wierszy, int kolumn);
 
 int
 main ()
 {
-double tab[n][n], x;
-int i, j;
+  double tab[n][n], x;
+  int i, j;
 
-for (i = 0; i < n; i++)//Wczytanie  tablicy (wiersze)
+  for (i = 0; i < n; i++)       //Wczytanie  tablicy (wiersze)
+    {
+      for (j = 0; j < n; j++)   //Wczytywanie kolumn
+        {
+          printf ("Wprowadz skladowa tablicy [%d,%d]: ", i + 1, j + 1);
+          scanf ("%lf", &x);
+          tab[i][j] = x;
+        }
+    }
+  printf ("\n\n");              //Odstęp przy wyświetlaniu
+
+  wyswietlMacierz (tab, i, j);  //Wyświetlanie tablicy
+
+  printf ("\n\n");              //Odstęp po wyświetleniu tablicy
+
+  trans (tab);
+
+  getchar ();
+  getchar ();
+  return 0;
+}
+
+double
+trans (double tab[n][n])
 {
-for (j = 0; j < n; j++)//Wczytywanie kolumn
+  double tabT[n][n];
+  int i, j;
+  for (i = 0; i < n; i++)       //Transponowanie tablicy tab na tablice tabT
+    for (j = 0; j < n; j++)
+      tabT[i][j] = tab[j][i];
+  wyswietlMacierz (tabT, i, j); //Wyświetlanie transponowanej tablicy
+}
+
+void
+wyswietlMacierz (double m[n][n], int wierszy, int kolumn)
 {
-printf ("Wprowadz skladowa tablicy [%d,%d]: ", i, j);
-scanf ("%lf", &x);
-tab[i][j] = x;
-}
-}
-printf("\n\n");//Odstęp przy wyświetlaniu
- 
-for(i=0; i<n; i++) //Wyświetlanie tablicy
-for(j=0; j<n; j++) 
-printf("%lf %c",tab[i][j],j==n-1?'\n':' ');
-
-printf("\n\n");//Odstęp po wyświetleniu tablicy
-
-trans(tab);
-
-getchar ();
-getchar ();
-return 0;
-}
-
-double trans(double tab[n][n]){
-double tabT[n][n];
-int i, j;
-for (i = 0; i < n; i++)//Transponowanie tablicy tab na tablice tabT
-for (j = 0; j < n; j++)
-tabT[i][j] = tab[j][i];
-
-for(i=0; i<n; i++)//Wyświetlanie transponowanej tablicy
-for(j=0; j<n; j++)
-printf("%lf %c", tabT[i][j],j==n-1?'\n':' ');   
-}
-
-void wyswietlMacierz(double m[n][n]){
-	
+  int i, j;
+  for (i = 0; i < n; i++)
+    for (j = 0; j < n; j++)
+      printf ("%lf %c", m[i][j], j == n - 1 ? '\n' : ' ');
 }
 ```

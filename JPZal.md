@@ -311,13 +311,13 @@ main ()
 
   do
     {                           //pętla - wczytywanie przedziału
-      puts ("Podaj kat w radianach (wartosc poczatkowa): ");
+      printf ("Podaj kat w radianach (wartosc poczatkowa): ");
       scanf ("%lf", &x);
-      puts ("Podaj kat w radianach (wartosc koncowa): ");
+      printf ("\nPodaj kat w radianach (wartosc koncowa): ");
       scanf ("%lf", &y);
       if (x > y)                //instrukcja w razie błędu
         puts
-          ("\nWartosc koncowa nie moze byc mniejsza od wartosci poczatkowej - sprobuj ponownie\n\n");
+          ("\nWartosc koncowa nie moze byc mniejsza od wartosci poczatkowej - sprobuj ponownie\n");
     }
   while (y < x);
 

@@ -205,7 +205,25 @@ char tekst[]=”Tablica to podstawa programowania.”
  od końca do początku.
 
 ```c
+#include <stdio.h>
 
+int
+main ()
+{
+  char tekst[] = "Tablica to podstawa programowania.";
+  int rozmiar = sizeof (tekst) / sizeof (char), i, j = rozmiar - 1;
+  char rewers[rozmiar];
+  for (i = 0; i < rozmiar; i++, j--)
+    rewers[i] = tekst[j];
+
+//for(i=0;i<rozmiar;i++)
+//printf("%c",tekst[i]);
+
+  for (i = 0; i < rozmiar; i++)
+    printf ("%c", rewers[i]);
+  getchar ();
+  return 0;
+}
 ```
 
 ### Zadanie 7

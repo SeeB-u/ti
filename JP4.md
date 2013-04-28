@@ -216,12 +216,58 @@ Napisz funkcję void odKonca(char napis[]) która odwraca podany napis (taka fun
 
 ```
 
-### Zadanie 8
+### Zadanie 8 (Niepoprawne rozwiązanie)!
 
 Napisz funkcję zwracającą najmniejszy i największy element z tablicy liczb zmiennoprzecinkowych podanej jako argument funkcji. 
 
 ```c
+#include <stdio.h>
+#define rozmiar 5
 
+double extr (double dane[]);    //Funkcja szukająca element największy i najmniejszy w tablicy
+
+int
+main ()
+{
+  double dane[rozmiar], x, min, max, b[2];
+  int i;
+  for (i = 0; i < rozmiar; i++)
+    {
+      printf ("Wprowadz liczbe nr %d: ", i + 1);
+      scanf ("%lf", &x);
+      dane[i] = x;
+    }
+
+  for (i = 0; i < rozmiar; i++)
+    printf ("\nElemnt %d tablicy ma wartosc: %lf", i, dane[i]);
+  *b = extr (dane);
+  printf ("\n\nElemnt najwiekszy to: %lf, a najmniejszy to: %lf.", b[0],
+          b[1]);
+  getchar ();
+  getchar ();
+  return 0;
+}
+
+
+double
+extr (double dane[])
+{
+  int i;
+  double x, min = 1 / 0.0, max = -1 / 0.0, a[2];
+  for (i = 0; i < rozmiar; i++)
+    {
+      x = dane[i];
+      if (x <= min)
+        min = x;
+      if (x >= max)
+        max = x;
+    }
+  a[0] = max;
+  a[1] = min;
+  printf ("\n\nElemnt najwiekszy to: %lf, a najmniejszy to: %lf.", a[0],
+          a[1]);
+  return *a;
+}
 ```
 
 ### Zadanie 9

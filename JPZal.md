@@ -296,7 +296,7 @@ w taki sposób, aby program wczytywał wartość początkową oraz końcową dzi
 ```c
 #include <stdio.h>
 #include <math.h>
-#define delta 1e-15             //delta - wartość minimalna wyrazu szereguu Maclaurina, która przerwie działanie pętli
+#define DELTA 1e-15             //DELTA - wartość minimalna wyrazu szereguu Maclaurina, która przerwie działanie pętli
 
 double sinus (double x);        //deklaracja mojej funkcji liczącej wartość sinusa dla argumentu x
 
@@ -346,7 +346,7 @@ sinus (double x)
   int n;
   double wyraz, suma;           //suma szeregu Maclaurina
   suma = wyraz = x;             //w pierwszym kroku suma ciągu = pierwszy wyraz ciągu = argument funkcji - x
-  for (n = 3; wyraz >= delta || wyraz <= -delta; n += 2)
+  for (n = 3; wyraz >= DELTA || wyraz <= -DELTA; n += 2)
     {                           //pętla działa, dopóki wartość bezwzględna kolejnego wyrazu szeregu nie przekroczy wartości minimalnej
       wyraz *= (-(x * x) / ((n - 1) * n));      //obliczanie kolejnego wyrazu szeregu
       suma += wyraz;            //zwiększanie sumy szeregu o obliczony wyraz

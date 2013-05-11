@@ -138,7 +138,7 @@ Napisz funkcję obliczającą średnią arytmetyczną z liczb zawartych w tablic
 #include <stdio.h>
 #define rozmiar 5
 
-double esrednia (double dane[]);        //Funkcja licząca średnią elementów tablicy
+double esrednia (double dane[], int n);        //Funkcja licząca średnią elementów tablicy
 
 
 int
@@ -153,7 +153,7 @@ main ()
       dane[i] = x;
     }
 
-  srednia = esrednia (dane);
+  srednia = esrednia (dane, rozmiar);
 
   for (i = 0; i < rozmiar; i++)
     printf ("\nElemnt %d tablicy ma wartosc: %lf", i, dane[i]);
@@ -166,11 +166,11 @@ main ()
 
 
 double
-esrednia (double dane[])
+esrednia (double dane[], int n)
 {
   int i;
   double x, suma = 0.0;
-  for (i = 0; i < rozmiar; i++)
+  for (i = 0; i < n; i++)
     suma += dane[i];
   return suma / rozmiar;
 }

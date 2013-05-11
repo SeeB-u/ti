@@ -253,7 +253,7 @@ odKonca (char napis[])          //Funcka do wyświetlania napisu "od tyłu"
 }
 ```
 
-### Zadanie 8 (Niepoprawne rozwiązanie)!
+### Zadanie 8
 
 Napisz funkcję zwracającą najmniejszy i największy element z tablicy liczb zmiennoprzecinkowych podanej jako argument funkcji. 
 
@@ -261,13 +261,19 @@ Napisz funkcję zwracającą najmniejszy i największy element z tablicy liczb z
 #include <stdio.h>
 #define rozmiar 5
 
-double extr (double dane[]);    //Funkcja szukająca element największy i najmniejszy w tablicy
+struct minMax {
+       double min;
+       double max;
+       };
+
+struct minMax extr (double dane[], int n);    //Funkcja szukająca element największy i najmniejszy w tablicy
 
 int
 main ()
 {
-  double dane[rozmiar], x, min, max, b[2];
+  double dane[rozmiar], x, min, max;
   int i;
+  struct minMax mM;
   for (i = 0; i < rozmiar; i++)
     {
       printf ("Wprowadz liczbe nr %d: ", i + 1);
@@ -277,21 +283,20 @@ main ()
 
   for (i = 0; i < rozmiar; i++)
     printf ("\nElemnt %d tablicy ma wartosc: %lf", i, dane[i]);
-  *b = extr (dane);
-  printf ("\n\nElemnt najwiekszy to: %lf, a najmniejszy to: %lf.", b[0],
-          b[1]);
+mM = extr (dane, rozmiar);
+  printf ("\n\nElemnt najmniejszy to: %lf, a najwiekszy to: %lf.",mM.min, mM.max);
   getchar ();
   getchar ();
   return 0;
 }
 
-
-double
-extr (double dane[])
+struct minMax extr (double dane[], int n)
 {
   int i;
-  double x, min = 1 / 0.0, max = -1 / 0.0, a[2];
-  for (i = 0; i < rozmiar; i++)
+  double x, min, max;
+  struct minMax mM;
+  min = max = dane[0];
+  for (i = 1; i < n; i++)
     {
       x = dane[i];
       if (x <= min)
@@ -299,11 +304,9 @@ extr (double dane[])
       if (x >= max)
         max = x;
     }
-  a[0] = max;
-  a[1] = min;
-  printf ("\n\nElemnt najwiekszy to: %lf, a najmniejszy to: %lf.", a[0],
-          a[1]);
-  return *a;
+  mM.min = min;
+  mM.max = max;
+  return mM;
 }
 ```
 

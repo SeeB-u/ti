@@ -429,21 +429,29 @@ Napisz funkcję która transponuje tablicę kwadratową double tab[128][128] pod
 
 ```c
 #include <stdio.h>
-#define n 3                     //Rozmiar tablicy
+#include <stdio.h>
+#define N 128                     //Rozmiar tablicy
 
-double trans (double tab[n][n]);
+double trans (double tab[N][N], int wierszy, int kolumn);
 
-void wyswietlMacierz (double m[n][n], int wierszy, int kolumn);
+void wyswietlMacierz (double m[N][N], int wierszy, int kolumn);
 
 int
 main ()
 {
-  double tab[n][n], x;
-  int i, j;
-
-  for (i = 0; i < n; i++)       //Wczytanie  tablicy (wiersze)
+  double tab[N][N], x;
+  int i, j, wierszy, kolumn;
+  
+          printf ("Wprowadz ilosc wierszy: ");
+          scanf ("%d", &wierszy);
+          printf ("\nWprowadz ilosc kolumn: ");
+          scanf ("%d", &kolumn);
+          
+          printf ("\n\n");          //Odstęp przy wyświetlaniu
+          
+  for (i = 0; i < wierszy; i++)       //Wczytanie  tablicy (wiersze)
     {
-      for (j = 0; j < n; j++)   //Wczytywanie kolumn
+      for (j = 0; j < kolumn; j++)   //Wczytywanie kolumn
         {
           printf ("Wprowadz skladowa tablicy [%d,%d]: ", i + 1, j + 1);
           scanf ("%lf", &x);
@@ -452,11 +460,11 @@ main ()
     }
   printf ("\n\n");              //Odstęp przy wyświetlaniu
 
-  wyswietlMacierz (tab, i, j);  //Wyświetlanie tablicy
+  wyswietlMacierz (tab, wierszy, kolumn);  //Wyświetlanie tablicy
 
   printf ("\n\n");              //Odstęp po wyświetleniu tablicy
 
-  trans (tab);
+  trans (tab, wierszy, kolumn);
 
   getchar ();
   getchar ();
@@ -464,22 +472,22 @@ main ()
 }
 
 double
-trans (double tab[n][n])
+trans (double tab[N][N], int wierszy, int kolumn)
 {
-  double tabT[n][n];
-  int i, j;
-  for (i = 0; i < n; i++)       //Transponowanie tablicy tab na tablice tabT
-    for (j = 0; j < n; j++)
-      tabT[i][j] = tab[j][i];
-  wyswietlMacierz (tabT, i, j); //Wyświetlanie transponowanej tablicy
+  double tabT[N][N];
+  int i, j, k;
+  for (i = 0; i < wierszy; i++)       //Transponowanie tablicy tab na tablice tabT
+    for (j = 0; j < kolumn; j++)
+      tabT[j][i] = tab[i][j];
+  wyswietlMacierz (tabT, kolumn, wierszy); //Wyświetlanie transponowanej tablicy
 }
 
 void
-wyswietlMacierz (double m[n][n], int wierszy, int kolumn)
+wyswietlMacierz (double m[N][N], int wierszy, int kolumn)
 {
   int i, j;
-  for (i = 0; i < n; i++)
-    for (j = 0; j < n; j++)
-      printf ("%lf %c", m[i][j], j == n - 1 ? '\n' : ' ');
+  for (i = 0; i < wierszy; i++)
+    for (j = 0; j < kolumn; j++)
+      printf ("%lf %c", m[i][j], j == kolumn - 1 ? '\n' : ' ');
 }
 ```

@@ -439,7 +439,6 @@ Napisz funkcję która transponuje tablicę kwadratową double tab[128][128] pod
 
 ```c
 #include <stdio.h>
-#include <stdio.h>
 #define N 128                     //Rozmiar tablicy
 
 double trans (double tab[N][N], int wierszy, int kolumn);
@@ -449,7 +448,7 @@ void wyswietlMacierz (double m[N][N], int wierszy, int kolumn);
 int
 main ()
 {
-  double tab[N][N], x;
+  double tab[N][N], tabT[N][N], x;
   int i, j, wierszy, kolumn;
   
           printf ("Wprowadz ilosc wierszy: ");
@@ -474,7 +473,13 @@ main ()
 
   printf ("\n\n");              //Odstęp po wyświetleniu tablicy
 
-  trans (tab, wierszy, kolumn);
+  for (i = 0; i < wierszy; i++)       //Klonowanie tablicy
+  for (j = 0; j < kolumn; j++)
+    tabT[i][j] = tab[i][j];
+  
+  trans (tabT, wierszy, kolumn);
+  
+  wyswietlMacierz (tabT, kolumn, wierszy);  //Wyświetlanie tablicy
 
   getchar ();
   getchar ();
@@ -489,7 +494,10 @@ trans (double tab[N][N], int wierszy, int kolumn)
   for (i = 0; i < wierszy; i++)       //Transponowanie tablicy tab na tablice tabT
     for (j = 0; j < kolumn; j++)
       tabT[j][i] = tab[i][j];
-  wyswietlMacierz (tabT, kolumn, wierszy); //Wyświetlanie transponowanej tablicy
+      
+  for (i = 0; i < kolumn; i++)       //Klonowanie tablicy
+  for (j = 0; j < wierszy; j++)
+    tab[i][j] = tabT[i][j];
 }
 
 void

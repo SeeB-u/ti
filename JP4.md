@@ -120,7 +120,7 @@ double
 emax (double dane[])            //Definicja funkcji szukającej element największy w tablicy
 {
   int i;
-  double max = -1 / 0.0;        //Minus nieskończoność
+  double max = dane[0];        //Pierwsza wartość w tablicy
   for (i = 0; i < rozmiar; i++)
     {
       if (dane[i] >= max)

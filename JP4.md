@@ -210,6 +210,7 @@ Napisz funkcję void odKonca(char napis[]) która odwraca podany napis (taka fun
 
 ```c
 #include <stdio.h>
+#include<string.h>
 #define rozmiar 32
 
 void odKonca (char napis[]);
@@ -222,21 +223,22 @@ main ()
 
   for (i = 0; i < rozmiar; i++) //Null-owanie tablicy
     napis[i] = '\0';
-    
+
   i = 0;
 
   printf ("Wprowadz napis:");   //Wczytywanie napisu
-  while ((c = getchar ()) != EOF)
+  while ((c = getchar ()) != '\n')
     {
       napis[i] = c;
       i++;
     }
+  napis[i]='\0';                  //Napis musi się kończyć symbolem \0 (null)
 
-  for (i = 0; i < rozmiar; i++) //Wyświetlanie napisu
-    printf ("%c", napis[i]);
+  printf("%s\n\n", napis);       //Wyświetlanie napisu
 
   odKonca (napis);              //Użycie funkcji
 
+  puts(napis);                  //Wyświetlanie odwróconego napisu
   getchar ();
   return 0;
 }
@@ -244,12 +246,14 @@ main ()
 void
 odKonca (char napis[])          //Funcka do wyświetlania napisu "od tyłu"
 {
-  int i, j = rozmiar - 1;
-  char rewers[rozmiar];
-  for (i = 0; i < rozmiar; i++, j--)
+  int i, j = strlen(napis) - 1;
+  char rewers[strlen(napis)];
+  
+  for (i = 0; i < strlen(napis); i++, j--)
     rewers[i] = napis[j];
-  for (i = 0; i < rozmiar; i++)
-    printf ("%c", rewers[i]);
+
+  for (i = 0; i < strlen(napis); i++)
+    napis[i] = rewers[i];
 }
 ```
 

@@ -363,51 +363,34 @@ Napisać funkcję obliczającą iloczyn skalarny dwóch wektorów n-wymiarowych.
 
 ```c
 #include <stdio.h>
-#define n 3                     //Rozmiar wektorów
+#define N 10                     //Rozmiar wektorów
 
-double iloczyn (double dane1[], double dane2[]);        //Deklaracja funkcji
+double iloczyn (double dane1[], double dane2[], int n);
+void wysWekt(double dane[], int n);
+void wprWekt(double dane[], int n);
 
 int
 main ()
 {
-  double dane1[n], dane2[n], x;
-  int i;
+  double dane1[N], dane2[N], x;
+  int i, n;
+  printf ("Wprowadz rozmiar wektorow: ");
+  scanf ("%d", &n);
+     
+  printf("\n\nWprowadz skladowa wektora pierwszego\n");
+  wprWekt(dane1, n);
+  
+  puts (" ");  
+  
+  printf("\n\nWprowadz skladowa wektora drugiego\n");
+  wprWekt(dane2, n);
+    
+  printf("\n\nWektor pierwszy = ");
+  wysWekt(dane1, n);
+  printf("\n\nWektor drugi = ");
+  wysWekt(dane2, n);
 
-  for (i = 0; i < n; i++)       //wczytanie skladowych wektora nr 1
-    {
-      printf ("Wprowadz skladowa wektora pierwszego nr %d: ", i + 1);
-      scanf ("%lf", &x);
-      dane1[i] = x;
-    }
-
-  puts (" ");                   //Oddzielenie składowych wektora nr 1 oraz nr 2
-
-  for (i = 0; i < n; i++)       //wczytanie skladowych wektora nr 2
-    {
-      printf ("Wprowadz skladowa wektora drugiego nr %d: ", i + 1);
-      scanf ("%lf", &x);
-      dane2[i] = x;
-    }
-
-  printf ("\nWektor nr 1: [");  //Wypisanie wektora nr 1
-  for (i = 0; i < n; i++)
-    {
-      printf ("%lf", dane1[i]);
-      if (i < n - 1)
-        printf (",");
-    }
-  printf ("].");
-
-  printf ("\nWektor nr 2: [");  //Wypisanie wektora nr 2
-  for (i = 0; i < n; i++)
-    {
-      printf ("%lf", dane2[i]);
-      if (i < n - 1)
-        printf (",");
-    }
-  printf ("].");
-
-  x = iloczyn (dane1, dane2);   //Wykorzystanie funkcji
+  x = iloczyn (dane1, dane2, n);   //Wykorzystanie funkcji
 
   printf ("\n\nIloczyn skalarny tych wektorow wynosi = %lf.", x);
 
@@ -417,13 +400,36 @@ main ()
 }
 
 double
-iloczyn (double dane1[], double dane2[])        //Definicja funkcji
+iloczyn (double dane1[], double dane2[], int n)        //Definicja funkcji
 {
   int i;
   double x = 0.0;
   for (i = 0; i < n; i++)
     x += (dane1[i]) * (dane2[i]);
   return x;
+}
+
+void wysWekt(double dane[], int n){
+       int i;
+       printf ("[");
+  for (i = 0; i < n; i++)
+    {
+      printf ("%lf", dane[i]);
+      if (i < n - 1)
+        printf (",");
+    }
+  printf ("].");
+}
+
+void wprWekt(double dane[], int n) {
+  int i;
+  double x;
+  for (i = 0; i < n; i++)       
+    {
+      printf ("nr %d: ", i + 1);
+      scanf ("%lf", &x);
+      dane[i] = x;
+    }
 }
 ```
 

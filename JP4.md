@@ -262,7 +262,11 @@ odKonca (char napis[])          //Funcka do wyświetlania napisu "od tyłu"
 Napisz funkcję zwracającą najmniejszy i największy element z tablicy liczb zmiennoprzecinkowych podanej jako argument funkcji. 
 
 ```c
-#include <stdio.h>
+
+  min = max = dane[0];
+  for (i = 1; i < n; i++)
+    {
+      x = dane[i];#include <stdio.h>
 #define rozmiar 5
 
 struct minMax {
@@ -299,10 +303,6 @@ struct minMax extr (double dane[], int n)
   int i;
   double x, min, max;
   struct minMax mM;
-  min = max = dane[0];
-  for (i = 1; i < n; i++)
-    {
-      x = dane[i];
       if (x <= min)
         min = x;
       if (x >= max)

@@ -196,6 +196,7 @@ potegaAn (int a, int n)
 Rozbuduj funkcję z poprzedniego zadania tak, aby funkcja działała także dla ujemnych potęg (n całkowite) i dla a będących typu double.
 
 ```c
+#include <stdio.h>
 double potegaAn (double a, int n);
 
 int

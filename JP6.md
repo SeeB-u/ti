@@ -153,6 +153,7 @@ void lista(struct student Studenci[], int iloscStudentow);
 void zapis(struct student Studenci[], const char * const  nazwaPliku, int iloscStudentow);
 int dodaj(struct student Studenci[], int iloscStudentow);
 int odczytaj(struct student Studenci[], const char * const  nazwaPliku);
+double srednia(struct student Studenci[], int iloscStudentow);
 
 enum oceny { ndst=2, dst, db, bdb };
 
@@ -164,7 +165,8 @@ struct student {
 
 int main(){
     int k, iloscStudentow=0;
-    struct student Kowalski={"Jan", "Kowlaski", db};
+    double s = 0.0;
+//    struct student Kowalski={"Jan", "Kowlaski", db};
     struct student Studenci[MAX_STUDENTOW];
     FILE *plik;
     const char * const nazwaPliku="studenci.dat";
@@ -184,7 +186,10 @@ int main(){
    iloscStudentow = dodaj(Studenci,iloscStudentow);
    if(k==4)
    iloscStudentow  = odczytaj(Studenci, nazwaPliku);
-   }
+   if(k==5)
+   s = srednia(Studenci, iloscStudentow);
+   printf("\n\nSrednia z %d ocen wynosi %.2lf\n",iloscStudentow, s);
+}
    while (k<6 && k>0);
     
    // Studenci[0]=Kowalski; /*przypisanie całej struktury */
@@ -307,4 +312,10 @@ int odczytaj(struct student Studenci[], const char * const  nazwaPliku){
       
       return iloscStudentow;
      }
+
+double srednia(struct student Studenci[], int iloscStudentow){
+       int suma = 0;
+       
+       return suma/iloscStudentow;
+       }
 ```

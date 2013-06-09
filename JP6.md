@@ -326,6 +326,7 @@ double srednia(struct student Studenci[], int iloscStudentow){
 
 double funkcja(double X);
 double miejsceZerowe(double(*funkcja)(double), double A, double B, double EPS);
+double funkcja1(double X);
 
 int
 main ()
@@ -352,14 +353,18 @@ A = miejsceZerowe(funkcja, A, B, EPS);
     {
      return X*X*X+X*X-3*X-3;    
     }     
-
-  double miejsceZerowe(double(*funckja)(double), double A, double B, double EPS) 
+  double funkcja1(double X)
     {
-    double YA, YB,Y, X; 
+     return sin(X);    
+    }
+
+  double miejsceZerowe(double(*funkcja)(double), double A, double B, double EPS) 
+    {
+    double YA, YB ,Y, X; 
       do
       {
         X = (A+B)/2;
-        Y = funkcja(X);
+        Y = (*funkcja)(X);
         if(Y==0.0)
           {             
           printf ("Pierwiastek rownania to: %lf", X);

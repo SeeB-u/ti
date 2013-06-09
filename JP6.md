@@ -353,10 +353,6 @@ A = miejsceZerowe(funkcja, A, B, EPS);
     {
      return X*X*X+X*X-3*X-3;    
     }     
-  double funkcja1(double X)
-    {
-     return sin(X);    
-    }
 
   double miejsceZerowe(double(*funkcja)(double), double A, double B, double EPS) 
     {

@@ -319,3 +319,92 @@ double srednia(struct student Studenci[], int iloscStudentow){
        return suma/iloscStudentow;
        }
 ```
+
+`1``c
+#include <stdio.h>
+#include <math.h>
+
+double funkcja(double X);
+double miejsceZerowe(double(*funkcja)(double), double A, double B, double EPS);
+
+int
+main ()
+{
+  double A, B, YA, YB, EPS, X, Y;
+  printf ("Podaj poczatek przedzialu:");
+  scanf ("%lf", &A);
+  printf ("Podaj koniec przedzialu:");
+  scanf ("%lf", &B);
+  printf ("Podaj dokladnosc:");
+  scanf ("%lf", &EPS);
+  YA = funkcja(A);
+  YB = funkcja(B);
+
+A = miejsceZerowe(funkcja, A, B, EPS);
+
+/*  do
+    {
+      X = (A+B)/2;
+      Y = funkcja(X);
+      if(Y==0.0)
+        {             
+        printf ("Pierwiastek rownania to: %lf", X);
+        break;
+        }
+      else
+        {
+         if((YA*Y) < 0.0)
+         {
+           B = X;
+           YB = Y;
+         }
+         else
+           {
+             A = X;
+             YA = Y;
+           }
+         }
+    }
+  while(fabs(B-A)>EPS);
+*/  
+  printf ("%lf", A);
+  getchar ();
+  getchar ();
+  return 0;
+}
+
+  double funkcja(double X)
+    {
+     return X*X*X+X*X-3*X-3;    
+    }     
+
+  double miejsceZerowe(double(*funckja)(double), double A, double B, double EPS) 
+    {
+    double YA, YB,Y, X; 
+      do
+      {
+        X = (A+B)/2;
+        Y = funkcja(X);
+        if(Y==0.0)
+          {             
+          printf ("Pierwiastek rownania to: %lf", X);
+          break;
+          }
+        else
+          {
+           if((YA*Y) < 0.0)
+           {
+             B = X;
+             YB = Y;
+           }
+           else
+           {
+               A = X;
+               YA = Y;
+             }
+           }
+      }
+    while(fabs(B-A)>EPS);
+    return A;
+    }
+```

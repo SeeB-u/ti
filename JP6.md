@@ -320,7 +320,7 @@ double srednia(struct student Studenci[], int iloscStudentow){
        }
 ```
 
-`1``c
+```c
 #include <stdio.h>
 #include <math.h>
 

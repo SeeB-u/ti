@@ -342,32 +342,7 @@ main ()
 
 A = miejsceZerowe(funkcja, A, B, EPS);
 
-/*  do
-    {
-      X = (A+B)/2;
-      Y = funkcja(X);
-      if(Y==0.0)
-        {             
-        printf ("Pierwiastek rownania to: %lf", X);
-        break;
-        }
-      else
-        {
-         if((YA*Y) < 0.0)
-         {
-           B = X;
-           YB = Y;
-         }
-         else
-           {
-             A = X;
-             YA = Y;
-           }
-         }
-    }
-  while(fabs(B-A)>EPS);
-*/  
-  printf ("%lf", A);
+  printf ("Miejsce zerowe funkcji to %lf, a wartość to %.16lf", A, funkcja(A));
   getchar ();
   getchar ();
   return 0;
